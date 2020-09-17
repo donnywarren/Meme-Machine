@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :memes
   resources :texts
   resources :images
   post '/auth/login', to: 'authentication#login'

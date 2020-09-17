@@ -1,3 +1,3 @@
 class Image < ApplicationRecord
-  belongs_to_many
+  has_many :memes
 end
