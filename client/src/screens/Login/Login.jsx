@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Login() {
+export default function Login(props) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -16,7 +16,12 @@ export default function Login() {
   };
 
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        props.loginSubmit(formData);
+      }}
+    >
       <h3>Login</h3>
       <label>
         <input
