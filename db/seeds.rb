@@ -38,3 +38,8 @@ wat = Text.create!(content: "WAT")
 manager = Text.create!(content: "I'd like to speak to the manager!")
 
 puts "#{Text.count} text created."
+
+
+meme1 = Meme.create!(user_id: "#{admin.id}", text_id: "#{good_boy.id}", image_id: "#{dog.id}")
+
+puts "#{Meme.count} memes created."

@@ -1,24 +1,30 @@
 class MemesController < ApplicationController
-  before_action :set_meme, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
+  before_action :set_meme, only: [:update, :destroy]
 
   # GET /memes
   def index
     @memes = Meme.all
 
     render json: @memes
+    # render json: @memes, include: [:images, :texts]   ['images', 'texts']
+    # render json: @meme, include: 'images,texts'
   end
 
   # GET /memes/1
   def show
-    render json: @meme
+    @meme = Meme.find(params[:id])
+    render json: @meme, include: [:images, :texts] #['images', 'texts']
+    # render json: @meme, include: 'images,texts'
   end
 
   # POST /memes
   def create
     @meme = Meme.new(meme_params)
+    @meme.user = @current_user #method from application_controller.rb authorize_request - provides user id associated with token of logged in user
 
     if @meme.save
-      render json: @meme, status: :created, location: @meme
+      render json: @meme, status: :created
     else
       render json: @meme.errors, status: :unprocessable_entity
     end
@@ -41,11 +47,11 @@ class MemesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meme
-      @meme = Meme.find(params[:id])
+      @meme = @current_user.memes.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def meme_params
-      params.require(:meme).permit(:user_id, :text_id, :image_id)
+      params.require(:meme).permit(:text_id, :image_id) #don't need user_id because @current_user is passed from application_controller.rb - see above
     end
 end

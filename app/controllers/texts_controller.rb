@@ -18,7 +18,7 @@ class TextsController < ApplicationController
     @text = Text.new(text_params)
 
     if @text.save
-      render json: @text, status: :created, location: @text
+      render json: @text, status: :created
     else
       render json: @text.errors, status: :unprocessable_entity
     end

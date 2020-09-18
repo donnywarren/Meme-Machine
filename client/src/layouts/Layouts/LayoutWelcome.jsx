@@ -6,7 +6,7 @@ import "./LayoutWelcome.css";
 export default function LayoutWelcome(props) {
   return (
     <>
-      <HeaderActivities />
+      {/* <HeaderActivities /> */}
       <HeaderWelcome />
       <main>{props.children}</main>
     </>
