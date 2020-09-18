@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
+
 import LayoutWelcome from "./layouts/Layouts/LayoutWelcome";
-import Login from "./screens/Login/Login";
-import { loginUser } from "./services/auth";
+import Login from "./screens/Login/LoginScreen";
+import Registration from "./screens/Registration/RegistrationScreen";
+
+import { loginUser, registerUser } from "./services/auth";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -14,6 +17,10 @@ function App() {
     setCurrentUser(userData);
   };
 
+  const registerSubmit = async (registerData) => {
+    const userData = await registerUser(registerData);
+    setCurrentUser(userData);
+  };
   return (
     <LayoutWelcome>
       <Switch>
@@ -21,11 +28,11 @@ function App() {
           <Login loginSubmit={loginSubmit} />
         </Route>
 
-        {/* <Route path="/register">
-          <MyComponent handleSubmit={handleSubmit} />
+        <Route path="/register">
+          <Registration registerSubmit={registerSubmit} />
         </Route>
 
-        <Route path="/" component={mainContainer} /> */}
+        {/* <Route path="/" component={mainContainer} /> */}
       </Switch>
     </LayoutWelcome>
   );
