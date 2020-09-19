@@ -4,11 +4,22 @@ import HeaderWelcome from "../../components/Headers/HeaderWelcome";
 import "./LayoutWelcome.css";
 
 export default function LayoutWelcome(props) {
-  return (
-    <>
-      {/* <HeaderActivities /> */}
-      <HeaderWelcome />
-      <main>{props.children}</main>
-    </>
-  );
+  if (!props.currentUser) {
+    return (
+      <>
+        <HeaderWelcome />
+        <main>{props.children}</main>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <HeaderActivities
+          currentUser={props.currentUser}
+          handleLogout={props.handleLogout}
+        />
+        <main>{props.children}</main>
+      </>
+    );
+  }
 }

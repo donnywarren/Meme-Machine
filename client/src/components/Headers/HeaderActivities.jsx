@@ -1,11 +1,13 @@
 import React from "react";
 import "./HeaderActivities.css";
 
-export default function HeaderActivities() {
+export default function HeaderActivities(props) {
+  const { currentUser } = props;
+
   return (
     <header>
       <h1>MEME MACHINE</h1>
-      {/* use an if statement to add approperiate content based on screen */}
+      <button onClick={props.handleLogout}>logout</button>
     </header>
   );
 }
