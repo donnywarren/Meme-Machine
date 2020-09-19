@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./UserHome.css";
+import "./UserHomeScreen.css";
 
 export default function UserHome(props) {
   const { currentUser } = props;

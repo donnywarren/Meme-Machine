@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 
 import "./App.css";
-
+import MainContainer from "./containers/MainContainer";
 import LayoutWelcome from "./layouts/Layouts/LayoutWelcome";
 import Login from "./screens/Login/LoginScreen";
 import Registration from "./screens/Registration/RegistrationScreen";
-import UserHome from "./screens/UserHome/UserHome";
+import UserHomeScreen from "./screens/UserHome/UserHomeScreen";
 import {
   loginUser,
   registerUser,
@@ -22,7 +22,7 @@ function App() {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
-      !userData ? history.push("/") : history.push("/userhome");
+      if (!userData) history.push("/");
     };
 
     handleVerify();
@@ -59,8 +59,12 @@ function App() {
           <Registration registerSubmit={registerSubmit} />
         </Route>
 
+        <Route path="/main">
+          <MainContainer currentUser={currentUser} component={MainContainer} />
+        </Route>
+
         <Route path="/userhome">
-          <UserHome currentUser={currentUser} />
+          <UserHomeScreen currentUser={currentUser} />
         </Route>
       </Switch>
     </LayoutWelcome>
