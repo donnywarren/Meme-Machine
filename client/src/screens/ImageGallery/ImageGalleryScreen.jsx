@@ -16,6 +16,11 @@ export default function ImageGallery(props) {
     setFormData({ img_url: value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("test");
+  };
+
   if (images[0]) {
     return (
       <div>
@@ -31,7 +36,7 @@ export default function ImageGallery(props) {
               onChange={handleChange}
             />
           </label>
-          <button>add image</button>
+          <button onSubmit={handleSubmit}>add image</button>
         </form>
 
         {images.map((item) => {

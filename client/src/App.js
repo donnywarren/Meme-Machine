@@ -32,13 +32,13 @@ function App() {
   const loginSubmit = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    !userData ? history.push("/") : history.push("/userhome");
+    !userData ? history.push("/") : history.push("/main/userhome");
   };
 
   const registerSubmit = async (registerData) => {
     const userData = await registerUser(registerData);
     setCurrentUser(userData);
-    !userData ? history.push("/") : history.push("/userhome");
+    !userData ? history.push("/") : history.push("/main/userhome");
   };
 
   const handleLogout = () => {
@@ -60,11 +60,7 @@ function App() {
         </Route>
 
         <Route path="/main">
-          <MainContainer currentUser={currentUser} component={MainContainer} />
-        </Route>
-
-        <Route path="/userhome">
-          <UserHomeScreen currentUser={currentUser} />
+          <MainContainer currentUser={currentUser} />
         </Route>
       </Switch>
     </LayoutWelcome>

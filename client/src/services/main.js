@@ -9,7 +9,12 @@ export const getAllTexts = async () => {
   const resp = await api.get("./texts");
   return resp.data;
 };
-export const addImage = async (formData) => {
+
+export const getAllMemes = async () => {
+  const resp = await api.get("./memes");
+  return resp.data;
+};
+export const postImage = async (formData) => {
   const resp = await api.post("./images", { image: formData });
   return resp.data;
 };

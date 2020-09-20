@@ -41,5 +41,6 @@ puts "#{Text.count} text created."
 
 
 meme1 = Meme.create!(user_id: "#{admin.id}", text_id: "#{good_boy.id}", image_id: "#{dog.id}")
+# meme1 = Meme.create!(user_id: "#{admin.id}", top_txt_id: "#{wat.id}", bottom_txt_id: "#{tuesday.id}", color: "#ffffff", image_id: "#{dog.id}")
 
 puts "#{Meme.count} memes created."
