@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
+import ImageGallery from "../screens/ImageGallery/ImageGalleryScreen";
 import MemeGenerator from "../screens/MemeGenerator/MemeGeneratorScreen";
 import { getAllImages, getAllTexts } from "../services/main";
 
 export default function MainContainer() {
-  // get texts and images
   const [images, setImages] = useState([]);
   const [texts, setTexts] = useState([]);
 
@@ -23,16 +23,14 @@ export default function MainContainer() {
     };
     fetchTexts();
   }, []);
-  console.log(texts);
 
   return (
     <Switch>
-      <Route path="/main/generator">
-        <h3>Meme Generator</h3>
+      <Route path="/main/generator/:id">
         <MemeGenerator texts={texts} images={images} />
       </Route>
       <Route path="/main/images">
-        <h3>Image Gallery</h3>
+        <ImageGallery images={images} />
       </Route>
     </Switch>
   );

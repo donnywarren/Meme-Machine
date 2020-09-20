@@ -1,0 +1,22 @@
+.text-complete-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-scroll-box {
+  border: 1px solid #000000;
+  height: 60vh;
+  width: 205px;
+  overflow: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
