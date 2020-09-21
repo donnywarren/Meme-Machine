@@ -5,17 +5,13 @@ class MemesController < ApplicationController
   # GET /memes
   def index
     @memes = Meme.all
-
-    render json: @memes
-    # render json: @memes, include: [:images, :texts]   ['images', 'texts']
-    # render json: @meme, include: 'images,texts'
+    render json: @memes, include: [:image, :text], status: :ok
   end
 
   # GET /memes/1
   def show
     @meme = Meme.find(params[:id])
-    render json: @meme, include: [:images, :texts] #['images', 'texts']
-    # render json: @meme, include: 'images,texts'
+    render json: @meme, include: [:image, :text], status: :ok
   end
 
   # POST /memes

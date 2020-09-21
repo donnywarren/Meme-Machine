@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { postImage, deleteImage } from "../../services/main";
 
 import "./ImageGalleryScreen.css";
 
@@ -9,7 +10,7 @@ export default function ImageGallery(props) {
   });
   const { img_url } = formData;
 
-  const images = props.images;
+  const { images, deleteImage, postImage } = props;
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -18,7 +19,8 @@ export default function ImageGallery(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("test");
+    postImage(formData);
+    setFormData({ img_url: "" });
   };
 
   if (images[0]) {
@@ -26,7 +28,7 @@ export default function ImageGallery(props) {
       <div>
         <h3>Images Gallery</h3>
         <p>Click "use" to launch the meme generator.</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>
             <input
               type="text"
@@ -36,15 +38,17 @@ export default function ImageGallery(props) {
               onChange={handleChange}
             />
           </label>
-          <button onSubmit={handleSubmit}>add image</button>
+          <button>add image</button>
         </form>
 
         {images.map((item) => {
           return (
             <div key={item.id}>
               <img src={item.img_url} alt={item.name} />
-              <Link to={`/main/generator/${item.id}`}>use</Link>
-              <Link>delete</Link>
+              <Link to={`/main/generator/${item.id}`}>
+                <button>use</button>
+              </Link>
+              <button onClick={() => deleteImage(item.id)}>Delete</button>
             </div>
           );
         })}

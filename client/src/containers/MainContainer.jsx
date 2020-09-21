@@ -3,6 +3,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import ImageGallery from "../screens/ImageGallery/ImageGalleryScreen";
 import MemeGenerator from "../screens/MemeGenerator/MemeGeneratorScreen";
 import UserHome from "../screens/UserHome/UserHomeScreen";
+import api from "../services/api-config";
 import {
   getAllImages,
   getAllTexts,
@@ -16,7 +17,6 @@ export default function MainContainer(props) {
   const [memes, setMemes] = useState([]);
 
   const { currentUser } = props;
-  const history = useHistory();
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -36,12 +36,16 @@ export default function MainContainer(props) {
       setTexts(textsArray);
     };
     fetchTexts();
-  }, []);
+  }, [images]);
 
-  const createSubmitImage = async (formData) => {
-    const newImage = await postImage(formData);
+  const postImage = async (formData) => {
+    const newImage = await api.post("./images", { image: formData });
     setImages((prevState) => [...prevState, newImage]);
-    history.push("/main/image");
+  };
+
+  const deleteImage = async (id) => {
+    await api.delete(`/images/${id}`);
+    setImages((prevState) => prevState.filter((image) => image.id !== id));
   };
 
   return (
@@ -50,7 +54,11 @@ export default function MainContainer(props) {
         <MemeGenerator texts={texts} images={images} />
       </Route>
       <Route path="/main/images">
-        <ImageGallery images={images} />
+        <ImageGallery
+          images={images}
+          postImage={postImage}
+          deleteImage={deleteImage}
+        />
       </Route>
       <Route path="/main/userhome">
         <UserHome

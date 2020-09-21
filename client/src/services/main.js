@@ -19,6 +19,11 @@ export const postImage = async (formData) => {
   return resp.data;
 };
 
+export const deleteImage = async (id) => {
+  const resp = await api.delete(`/images/${id}`);
+  return resp.data;
+};
+
 // export const postFood = async (formData) => {
 //   const resp = await api.post("/foods", { food: formData });
 //   return resp.data;
@@ -31,10 +36,5 @@ export const postImage = async (formData) => {
 
 // export const putFood = async (id, formData) => {
 //   const resp = await api.put(`/foods/${id}`, { food: formData });
-//   return resp.data;
-// };
-
-// export const deleteFood = async (id) => {
-//   const resp = await api.delete(`/foods/${id}`);
 //   return resp.data;
 // };

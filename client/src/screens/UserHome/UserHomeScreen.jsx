@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./UserHomeScreen.css";
 
 export default function UserHome(props) {
   const { currentUser, memes, texts, images } = props;
-  console.log(currentUser, memes, texts, images);
+  const [memeData, setMemeData] = useState();
 
   if (currentUser && texts[0]) {
     const { id } = currentUser;
@@ -14,10 +14,6 @@ export default function UserHome(props) {
       return meme.user_id === id;
     });
 
-    // console.log(id);
-    // console.log(userMemes[0].user_id);
-    // console.log(userMemes[0].image_id);
-    // console.log(userMemes[0].text_id);
     return (
       <div>
         <div>
@@ -30,19 +26,19 @@ export default function UserHome(props) {
           {!userMemes[0] ? (
             <h1>Time to make some memes!</h1>
           ) : (
-            <div className="user-meme-card">
-              {console.log("test")}
-              {userMemes.map((meme) => {
+            <div className="user-meme-complete-container">
+              {memes.map((meme) => {
                 return (
-                  <p key={meme.id}>
-                    {texts.find((text) => text.id === meme.tex_id)}
-                  </p>
+                  <div key={meme.id} className="user-meme-card">
+                    <div className="user-meme-container">
+                      <img src={meme.image.img_url} alt={meme.image.name} />
+                      <p className="user-meme-text">{meme.text.content}</p>
+                    </div>
+                    <button>edit</button>
+                    <button>delete</button>
+                  </div>
                 );
               })}
-              {/* <img src={images[6].img_url} alt={images[6].name} />
-              <p>{texts[0].content}</p> */}
-              <button>edit</button>
-              <button>delete</button>
             </div>
           )}
         </div>

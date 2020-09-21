@@ -30,7 +30,9 @@ export default function MemeGenerator(props) {
       <div>
         <h3>Meme Generator</h3>
 
-        <Link to="/main/images">choose new image</Link>
+        <Link to="/main/images">
+          <button>choose new image</button>
+        </Link>
         <div className="meme-under-construction">
           <img
             className="image-under-construction"
