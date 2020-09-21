@@ -20,7 +20,7 @@ class MemesController < ApplicationController
     @meme.user = @current_user #method from application_controller.rb authorize_request - provides user id associated with token of logged in user
 
     if @meme.save
-      render json: @meme, status: :created
+      render json: @meme, include: [:image, :text], status: :created
     else
       render json: @meme.errors, status: :unprocessable_entity
     end

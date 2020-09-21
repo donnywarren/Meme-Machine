@@ -1,28 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
+import api from "../../services/api-config";
+import { postMeme, postText } from "../../services/main";
 
 import "./MemeGeneratorScreen.css";
 
 export default function MemeGenerator(props) {
-  const [formData, setFormData] = useState({
-    content: "",
-  });
-
-  const { content } = formData;
-  const texts = props.texts;
-  const images = props.images;
+  const history = useHistory();
+  const { texts, memeSave, images } = props;
   const params = useParams();
   const image_id = parseInt(params.id);
   const image = images.find((item) => item.id === image_id);
+  const [text_id, setTextId] = useState(null);
+  const [isEdited, setIsEdited] = useState(false);
+
+  const [formData, setFormData] = useState({ content: "" });
+
+  const { content } = formData;
 
   const handleChange = (e) => {
     const { value } = e.target;
     setFormData({ content: value });
+    setIsEdited(true);
   };
 
-  const handleClick = (e) => {
-    const text = e.target.innerHTML;
-    setFormData({ content: text });
+  const handleClick = (item) => {
+    setTextId(item.id);
+    setFormData({ content: item.content });
+    setIsEdited(false);
   };
 
   if (texts[0] && images[0]) {
@@ -44,13 +49,23 @@ export default function MemeGenerator(props) {
           </div>
           {/* <button>top</button>
           <button>bottom</button> */}
-          <button>save meme</button>
+          <Link to="/main/images">
+            <button
+              onClick={() => memeSave(formData, image_id, text_id, isEdited)}
+            >
+              save meme
+            </button>
+          </Link>
         </div>
         <div className="text-complete-container">
           <div className="text-scroll-box">
             {props.texts.map((item) => {
               return (
-                <p key={item.id} onClick={handleClick} className="text-content">
+                <p
+                  key={item.id}
+                  onClick={() => handleClick(item)}
+                  className="text-content"
+                >
                   {item.content}
                 </p>
               );

@@ -14,6 +14,12 @@ export default function UserHome(props) {
       return meme.user_id === id;
     });
 
+    // const handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   postImage(formData);
+    //   setFormData({ img_url: "" });
+    // };
+
     return (
       <div>
         <div>
@@ -34,7 +40,11 @@ export default function UserHome(props) {
                       <img src={meme.image.img_url} alt={meme.image.name} />
                       <p className="user-meme-text">{meme.text.content}</p>
                     </div>
-                    <button>edit</button>
+                    <Link
+                      to={`/main/generator/${meme.image.id}/${meme.text.id}`}
+                    >
+                      <button>edit</button>
+                    </Link>
                     <button>delete</button>
                   </div>
                 );

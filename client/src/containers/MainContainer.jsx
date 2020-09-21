@@ -8,20 +8,23 @@ import {
   getAllImages,
   getAllTexts,
   getAllMemes,
-  postImage,
+  postText,
+  postMeme,
 } from "../services/main";
 
 export default function MainContainer(props) {
   const [images, setImages] = useState([]);
   const [texts, setTexts] = useState([]);
   const [memes, setMemes] = useState([]);
+  const history = useHistory();
 
   const { currentUser } = props;
 
   useEffect(() => {
     const fetchImages = async () => {
       const imagesArray = await getAllImages();
-      setImages(imagesArray);
+      const reverseImagesArray = imagesArray.reverse();
+      setImages(reverseImagesArray);
     };
     fetchImages();
 
@@ -36,11 +39,12 @@ export default function MainContainer(props) {
       setTexts(textsArray);
     };
     fetchTexts();
-  }, [images]);
+  }, []);
 
   const postImage = async (formData) => {
     const newImage = await api.post("./images", { image: formData });
     setImages((prevState) => [...prevState, newImage]);
+    window.location.reload();
   };
 
   const deleteImage = async (id) => {
@@ -48,10 +52,34 @@ export default function MainContainer(props) {
     setImages((prevState) => prevState.filter((image) => image.id !== id));
   };
 
+  const memeSave = async (formData, image_id, text_id, isEdited) => {
+    if (isEdited) {
+      const newText = await postText(formData);
+      const newMeme = await postMeme({
+        image_id,
+        text_id: newText.id,
+      });
+      setMemes((prevState) => [...prevState, newMeme]);
+    } else {
+      const newMeme = await postMeme({
+        image_id,
+        text_id,
+      });
+      setMemes((prevState) => [...prevState, newMeme]);
+    }
+    history.push("/main/userhome");
+  };
+
+  // const postMeme = async (formData) => {
+  //   const newMeme = await api.post("./memes", { meme: formData });
+  //   setImages((prevState) => [...prevState, newMeme]);
+  //   window.location.reload();
+  // };
+
   return (
     <Switch>
-      <Route path="/main/generator/:id">
-        <MemeGenerator texts={texts} images={images} />
+      <Route path="/main/generator/:id/:txt?">
+        <MemeGenerator texts={texts} images={images} memeSave={memeSave} />
       </Route>
       <Route path="/main/images">
         <ImageGallery
