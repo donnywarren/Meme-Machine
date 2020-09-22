@@ -70,7 +70,7 @@ textarea {
   resize: none;
   width: 300px;
   padding: 10px;
-  border-radius: none;
+  /* border-radius: none; */
   border: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
