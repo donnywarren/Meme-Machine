@@ -70,7 +70,6 @@ textarea {
   resize: none;
   width: 300px;
   padding: 10px;
-  /* border-radius: none; */
   border: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
@@ -119,4 +118,29 @@ select:focus {
   font-size: 18px;
   text-align: left;
   padding-left: 20px;
+}
+
+/* ======== MEDIA QUERIES ============ */
+
+@media only screen and (max-width: 700px) {
+  .edit-and-generator-containers {
+    flex-direction: column;
+  }
+
+  h3 {
+    font-size: 48px !important;
+  }
+
+  h1 {
+    font-size: 56px !important;
+  }
+
+  .text-complete-container {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+
+  .meme-under-construction {
+    margin-right: -20px;
+  }
 }

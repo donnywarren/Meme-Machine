@@ -43,3 +43,11 @@
   width: 110px;
   margin-top: 10px;
 }
+
+/* ============ MEDIA QUERIES ============== */
+
+@media only screen and (max-width: 600px) {
+  .new-url-input {
+    width: 300px;
+  }
+}
