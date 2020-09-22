@@ -17,7 +17,7 @@ h1 {
 }
 
 h3 {
-  font-size: 42px;
+  font-size: 50px;
 }
 
 img {
@@ -25,12 +25,12 @@ img {
 }
 
 button {
-  /* width: 82%; */
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
-  height: 40px;
+  height: 35px;
   padding: 0 20px;
   background-color: #2e2e2d;
+  box-shadow: 0 0 9px 1px #585858;
   color: white;
   border: none;
   cursor: pointer;

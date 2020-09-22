@@ -1,0 +1,29 @@
+.background-guy {
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: url("../../assets/BackgroundGuy.jpg");
+  background-size: cover;
+  background-color: #3f4a3d;
+  background-position: right;
+  padding-top: 60vh;
+}
+
+h3 {
+  margin: 0;
+}
+
+.login-container {
+  margin-right: 31vw;
+}
+
+.login-input {
+  height: 32px;
+  font-size: 20px;
+  border-radius: 0;
+  margin: 0 2px 20px;
+}
+
+.login-btn {
+  margin: 0 2px 20px;
+  height: 40px;
+}

@@ -3,20 +3,30 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 125px;
+  height: 150px;
+  padding-bottom: 25px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-image: url("../../assets/BackgroundGreen.jpg");
+  background-position: top;
+  background-size: 100%;
   z-index: 100;
 }
 .header-h1 {
   margin: 0 5vw 0 5vw;
 }
 
-.home-button,
 .logout-button {
-  margin: 0 5vw 11px 0;
+  margin: 0 2vw 11px 0;
+  width: 125px;
+  height: 40px;
+}
+
+.home-button {
+  margin: 0 8vw 11px 0;
+  width: 125px;
+  height: 40px;
 }
 
 .header-activities-btn-box {

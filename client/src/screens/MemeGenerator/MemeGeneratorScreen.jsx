@@ -31,12 +31,9 @@ export default function MemeGenerator(props) {
 
   if (texts[0] && images[0]) {
     return (
-      <div>
-        <h3>Meme Generator</h3>
-
-        <Link to="/main/images">
-          <button>CHOOSE NEW IMAGE</button>
-        </Link>
+      <div className="complete-edit-screen">
+        <div className="background-green"></div>
+        <h3 className="editor-h3">Meme Generator</h3>
 
         <div className="edit-and-generator-containers">
           <div className="meme-under-construction">
@@ -48,10 +45,9 @@ export default function MemeGenerator(props) {
             <div className="text-under-construction">
               <p>{content}</p>
             </div>
-            {/* <button>top</button>
-          <button>bottom</button> */}
             <Link to="/main/images">
               <button
+                className="update-meme-btn"
                 onClick={() => memeSave(formData, image_id, text_id, isEdited)}
               >
                 SAVE NEW MEME
@@ -80,16 +76,20 @@ export default function MemeGenerator(props) {
               })}
             </div>
 
-            <form>
+            <form className="text-form">
               <textarea
                 rows={3}
                 maxLength="60"
                 value={content}
                 onChange={handleChange}
+                placeholder="new text here"
               ></textarea>
               <button className="text-save" onClick={() => textSave(formData)}>
                 SAVE NEW TEXT
               </button>
+              <Link to="/main/images">
+                <button className="new-image-btn">CHOOSE NEW IMAGE</button>
+              </Link>
             </form>
           </div>
         </div>

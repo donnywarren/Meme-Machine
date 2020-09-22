@@ -1,10 +1,59 @@
-.user-meme-container {
+.background-green {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: url("../../assets/BackgroundGreen.jpg");
+  background-size: cover;
+  background-color: #3f4a3d;
+  padding-top: 60vh;
+  z-index: -100;
+}
+
+.userhome-container-complete {
+  margin-top: 170px;
+}
+
+.get-started-msg {
+  margin-top: 50px;
+}
+
+.get-started-btn {
+  width: 500px;
+  margin-top: 50px;
+  height: 40px;
+}
+
+.user-meme-complete-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.user-meme-card {
+  width: 300px;
+  margin-top: 35px;
+  overflow: hidden;
+  margin: 30px;
+}
+
+.user-meme-img-container {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vh;
   word-wrap: break-word;
+}
+
+.user-meme-img-container {
+  height: 450px;
+}
+
+img {
+  height: 100%;
 }
 
 .user-meme-text {
@@ -14,9 +63,21 @@
   transform: translateX(-50%);
   font-weight: 800;
   color: #ffffff;
-  width: 350px;
+  width: 294px;
   font-size: 32px;
   line-height: 1;
   text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
+}
+
+.user-meme-btn-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-meme-delete,
+.user-meme-edit,
+.user-meme-create-new {
+  width: 96px;
+  margin: 10px 0;
 }

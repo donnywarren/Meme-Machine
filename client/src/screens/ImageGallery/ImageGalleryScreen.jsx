@@ -24,12 +24,16 @@ export default function ImageGallery(props) {
 
   if (images[0]) {
     return (
-      <div>
-        <h3>Images Gallery</h3>
-        <p>Click "use" to launch the meme generator.</p>
+      <div className="gallery-complete-container">
+        <div className="background-green"></div>
+        <h3>IMAGE GALLERY</h3>
+        <p className="instructions">
+          Click "use" to launch the meme generator.
+        </p>
         <form onSubmit={handleSubmit}>
           <label>
             <input
+              className="new-url-input"
               type="text"
               placeholder="new image URL"
               value={img_url}
@@ -37,20 +41,31 @@ export default function ImageGallery(props) {
               onChange={handleChange}
             />
           </label>
-          <button>add image</button>
+          <button>ADD IMAGE</button>
         </form>
+        <div className="all-images-container">
+          {images.map((item) => {
+            return (
+              <div className="image-card" key={item.id}>
+                <div className="images-img-frame">
+                  <img src={item.img_url} alt={item.name} />
+                </div>
 
-        {images.map((item) => {
-          return (
-            <div key={item.id}>
-              <img src={item.img_url} alt={item.name} />
-              <Link to={`/main/generator/${item.id}`}>
-                <button>use</button>
-              </Link>
-              <button onClick={() => deleteImage(item.id)}>Delete</button>
-            </div>
-          );
-        })}
+                <div className="images-btn-box">
+                  <Link to={`/main/generator/${item.id}`}>
+                    <button className="image-use-btn">USE</button>
+                  </Link>
+                  <button
+                    className="image-delete-btn"
+                    onClick={() => deleteImage(item.id)}
+                  >
+                    DELETE
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   } else {

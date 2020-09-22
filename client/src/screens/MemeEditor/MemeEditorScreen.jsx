@@ -38,12 +38,10 @@ export default function MemeEditor(props) {
     console.log(text.content);
     // =========
     return (
-      <div>
-        <h3>Meme Editor</h3>
+      <div className="complete-edit-screen">
+        <div className="background-green"></div>
+        <h3 className="editor-h3">MEME EDITOR</h3>
 
-        <Link to="/main/images">
-          <button>CHOOSE NEW IMAGE</button>
-        </Link>
         <div className="edit-and-generator-containers">
           <div className="meme-under-construction">
             <img
@@ -54,10 +52,10 @@ export default function MemeEditor(props) {
             <div className="text-under-construction">
               <p>{content}</p>
             </div>
-            {/* <button>top</button>
-          <button>bottom</button> */}
+
             <Link to="/main/images">
               <button
+                className="update-meme-btn"
                 onClick={() =>
                   memeUpdate(formData, image_id, text_id, isEdited, meme_id)
                 }
@@ -94,11 +92,14 @@ export default function MemeEditor(props) {
                 maxLength="60"
                 value={content}
                 onChange={handleChange}
-                placeholder="enter your new text here"
+                placeholder="new text here"
               ></textarea>
               <button className="text-save" onClick={() => textSave(formData)}>
                 SAVE NEW TEXT
               </button>
+              <Link to="/main/images">
+                <button className="new-image-btn">CHOOSE NEW IMAGE</button>
+              </Link>
             </form>
           </div>
         </div>

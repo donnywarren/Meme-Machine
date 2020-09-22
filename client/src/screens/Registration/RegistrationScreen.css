@@ -1,0 +1,25 @@
+/* ======  SEE LOGIN SCREEN CSS ======= */
+
+h3 {
+  margin: 0;
+}
+
+.register-container {
+  margin-right: 34vw;
+}
+
+.register-input {
+  height: 32px;
+  font-size: 20px;
+  border-radius: 0;
+}
+
+.register-input {
+  margin: 4px 4px 4px;
+}
+
+.register-btn {
+  width: 442px;
+  margin: 4px 4px 20px;
+  height: 40px;
+}

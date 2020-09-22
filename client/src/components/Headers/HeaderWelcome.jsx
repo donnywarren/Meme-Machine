@@ -5,16 +5,16 @@ import "./HeaderWelcome.css";
 export default function HeaderWelcome() {
   return (
     <header className="header-welcome">
-      <div>
+      <div className="hero-container">
         <h1>MEME MACHINE</h1>
         <h3>Welcome to the Meme Machine</h3>
-        <p>A playground for creating and saving meme collections</p>
+        <h4>A playground for creating and saving meme collections</h4>
       </div>
-      <div>
-        <Link to="/login">
+      <div className="btn-container">
+        <Link className="login-btn" to="/login">
           <button>LOGIN</button>
         </Link>
-        <Link to="/register">
+        <Link className="registr-btn" to="/register">
           <button>REGISTER</button>
         </Link>
       </div>

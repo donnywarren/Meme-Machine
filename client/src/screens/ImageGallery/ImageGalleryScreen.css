@@ -1,0 +1,45 @@
+.gallery-complete-container {
+  margin-top: 170px;
+}
+
+.instructions {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.new-url-input {
+  height: 32px;
+  border-radius: 0 !important;
+  font-size: 18px;
+  width: 350px;
+  margin-bottom: 30px;
+}
+
+.all-images-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  margin: 30px;
+}
+
+.images-img-frame {
+  width: 250px;
+  height: 375px;
+  overflow: hidden;
+}
+
+.images-btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-use-btn,
+.image-delete-btn {
+  width: 110px;
+  margin-top: 10px;
+}

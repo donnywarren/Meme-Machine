@@ -1,7 +1,19 @@
+.complete-edit-screen {
+  margin-top: 170px;
+}
+
+.editor-h3 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
 .edit-and-generator-containers {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+}
+.image-under-construction {
+  height: 450px;
 }
 
 .meme-under-construction {
@@ -9,18 +21,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vh;
+  height: 500px;
   word-wrap: break-word;
+  margin-right: 50px;
+}
+
+.update-meme-btn {
+  width: 302px;
+  margin-top: 10px;
 }
 
 .text-under-construction {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   font-weight: 800;
   color: #ffffff;
-  width: 350px;
+  width: 300px;
   font-size: 32px;
   line-height: 1;
   text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000,
@@ -31,14 +49,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   font-weight: 800;
+  margin-left: 50px;
+  height: 500px;
 }
 
 .text-scroll-box {
   border: 1px solid #000000;
-  background-color: #ffffff;
-  height: 50vh;
-  width: 30vw;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 300px;
+  width: 300px;
   overflow: auto;
 }
 
@@ -47,8 +68,11 @@ textarea {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   resize: none;
-  width: 30vw;
+  width: 300px;
   padding: 10px;
+  border-radius: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .text-form {
@@ -69,13 +93,20 @@ select:focus {
 .text-delete {
   background-color: transparent;
   padding: 0 10px;
-  color: #aca9a9;
+  color: #6b6a6a;
   font-weight: 400;
   font-size: 32px;
+  box-shadow: none;
 }
 
 .text-save {
-  width: 30vw;
+  width: 300px;
+  margin-top: 10px;
+}
+
+.new-image-btn {
+  width: 300px;
+  margin-top: 10px;
 }
 
 .text-row {

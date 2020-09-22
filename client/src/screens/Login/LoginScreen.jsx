@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LoginScreen.css";
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -16,32 +17,40 @@ export default function Login(props) {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        props.loginSubmit(formData);
-      }}
-    >
-      <h3>Login</h3>
-      <label>
-        <input
-          name="username"
-          placeholder="username"
-          type="text"
-          value={username}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        <input
-          name="password"
-          placeholder="password"
-          type="password"
-          value={password}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <button>Submit</button>
-    </form>
+    <div className="background-guy">
+      <div className="login-container">
+        <form
+          autoComplete="off"
+          onSubmit={(e) => {
+            e.preventDefault();
+            props.loginSubmit(formData);
+          }}
+        >
+          <label>
+            <input
+              className="login-input"
+              name="username"
+              placeholder="username"
+              type="text"
+              value={username}
+              onChange={handleChange}
+            ></input>
+          </label>
+          <label>
+            <input
+              className="login-input"
+              name="password"
+              placeholder="password"
+              type="password"
+              value={password}
+              onChange={handleChange}
+            ></input>
+          </label>
+          <button className="login-btn">Submit</button>
+
+          <h3>LOGIN</h3>
+        </form>
+      </div>
+    </div>
   );
 }
