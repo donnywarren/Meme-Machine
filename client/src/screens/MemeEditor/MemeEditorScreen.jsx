@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
-import api from "../../services/api-config";
-import { postMeme, postText } from "../../services/main";
 
-import "./MemeGeneratorScreen.css";
+import "./MemeEditorScreen.css";
 
-export default function MemeGenerator(props) {
-  const { texts, memeSave, images, deleteText, textSave } = props;
+export default function MemeEditor(props) {
+  const { texts, memeUpdate, images, deleteText, textSave } = props;
   const params = useParams();
   const image_id = parseInt(params.id);
+  const meme_id = parseInt(params.memeId);
+  const txt_id = parseInt(params.txt);
+  const text = texts.find((item) => item.id === txt_id);
   const image = images.find((item) => item.id === image_id);
   const [text_id, setTextId] = useState(null);
   const [isEdited, setIsEdited] = useState(false);
 
   const [formData, setFormData] = useState({ content: "" });
+
+  const test = () => {
+    setFormData(text.content);
+  };
 
   const { content } = formData;
 
@@ -28,16 +33,17 @@ export default function MemeGenerator(props) {
     setFormData({ content: item.content });
     setIsEdited(false);
   };
-
   if (texts[0] && images[0]) {
+    // ========
+    console.log(text.content);
+    // =========
     return (
       <div>
-        <h3>Meme Generator</h3>
+        <h3>Meme Editor</h3>
 
         <Link to="/main/images">
           <button>CHOOSE NEW IMAGE</button>
         </Link>
-
         <div className="edit-and-generator-containers">
           <div className="meme-under-construction">
             <img
@@ -52,9 +58,11 @@ export default function MemeGenerator(props) {
           <button>bottom</button> */}
             <Link to="/main/images">
               <button
-                onClick={() => memeSave(formData, image_id, text_id, isEdited)}
+                onClick={() =>
+                  memeUpdate(formData, image_id, text_id, isEdited, meme_id)
+                }
               >
-                SAVE NEW MEME
+                UPDATE MEME
               </button>
             </Link>
           </div>
@@ -80,12 +88,13 @@ export default function MemeGenerator(props) {
               })}
             </div>
 
-            <form>
+            <form className="text-form">
               <textarea
                 rows={3}
                 maxLength="60"
                 value={content}
                 onChange={handleChange}
+                placeholder="enter your new text here"
               ></textarea>
               <button className="text-save" onClick={() => textSave(formData)}>
                 SAVE NEW TEXT

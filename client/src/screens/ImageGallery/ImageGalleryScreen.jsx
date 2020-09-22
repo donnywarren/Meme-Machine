@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { postImage, deleteImage } from "../../services/main";
 
 import "./ImageGalleryScreen.css";
 

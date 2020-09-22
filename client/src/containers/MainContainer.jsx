@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import ImageGallery from "../screens/ImageGallery/ImageGalleryScreen";
+import MemeEditor from "../screens/MemeEditor/MemeEditorScreen";
 import MemeGenerator from "../screens/MemeGenerator/MemeGeneratorScreen";
 import UserHome from "../screens/UserHome/UserHomeScreen";
 import api from "../services/api-config";
@@ -10,6 +11,8 @@ import {
   getAllMemes,
   postText,
   postMeme,
+  destroyText,
+  updateMeme,
 } from "../services/main";
 
 export default function MainContainer(props) {
@@ -52,6 +55,16 @@ export default function MainContainer(props) {
     setImages((prevState) => prevState.filter((image) => image.id !== id));
   };
 
+  const deleteMeme = async (id) => {
+    await api.delete(`/memes/${id}`);
+    setMemes((prevState) => prevState.filter((meme) => meme.id !== id));
+  };
+
+  const deleteText = async (id) => {
+    await destroyText(id);
+    setTexts((prevState) => prevState.filter((text) => text.id !== id));
+  };
+
   const memeSave = async (formData, image_id, text_id, isEdited) => {
     if (isEdited) {
       const newText = await postText(formData);
@@ -60,26 +73,67 @@ export default function MainContainer(props) {
         text_id: newText.id,
       });
       setMemes((prevState) => [...prevState, newMeme]);
+      setTexts((prevState) => [...prevState, newText]);
     } else {
       const newMeme = await postMeme({
         image_id,
         text_id,
       });
-      setMemes((prevState) => [...prevState, newMeme]);
     }
     history.push("/main/userhome");
   };
-
-  // const postMeme = async (formData) => {
-  //   const newMeme = await api.post("./memes", { meme: formData });
-  //   setImages((prevState) => [...prevState, newMeme]);
-  //   window.location.reload();
-  // };
+  // =========================  UPDATE ==================================
+  const memeUpdate = async (formData, image_id, text_id, isEdited, meme_id) => {
+    if (isEdited) {
+      const newText = await postText(formData);
+      const updateMeme = await updateMeme({
+        meme_id,
+        image_id,
+        text_id: newText.id,
+      });
+      setMemes((prevState) => [...prevState, updateMeme]);
+      setTexts((prevState) => [...prevState, newText]);
+    } else {
+      const editMeme = await updateMeme({
+        meme_id,
+        image_id,
+        text_id,
+      });
+      setMemes((prevState) => [...prevState, editMeme]);
+    }
+    history.push("/main/userhome");
+  };
+  // ========================================================================
+  const textSave = async (formData) => {
+    if (formData.content !== "") {
+      console.log(formData.content);
+      const newText = await postText(formData);
+      setTexts((prevState) => [...prevState, newText]);
+    } else {
+      alert("Please enter a new text content.");
+    }
+  };
 
   return (
     <Switch>
       <Route path="/main/generator/:id/:txt?">
-        <MemeGenerator texts={texts} images={images} memeSave={memeSave} />
+        <MemeGenerator
+          texts={texts}
+          images={images}
+          memeSave={memeSave}
+          deleteText={deleteText}
+          textSave={textSave}
+        />
+      </Route>
+      <Route path="/main/editor/:id/:txt?/:memeId?">
+        <MemeEditor
+          texts={texts}
+          images={images}
+          memeSave={memeSave}
+          deleteText={deleteText}
+          textSave={textSave}
+          memeUpdate={memeUpdate}
+        />
       </Route>
       <Route path="/main/images">
         <ImageGallery
@@ -94,6 +148,7 @@ export default function MainContainer(props) {
           currentUser={currentUser}
           images={images}
           texts={texts}
+          deleteMeme={deleteMeme}
         />
       </Route>
     </Switch>

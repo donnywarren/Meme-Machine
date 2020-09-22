@@ -19,11 +19,6 @@ export const postImage = async (formData) => {
   return resp.data;
 };
 
-export const deleteImage = async (id) => {
-  const resp = await api.delete(`/images/${id}`);
-  return resp.data;
-};
-
 export const postText = async (formData) => {
   const resp = await api.post("/texts", { text: formData });
   return resp.data;
@@ -31,5 +26,27 @@ export const postText = async (formData) => {
 
 export const postMeme = async (formData) => {
   const resp = await api.post("/memes", { meme: formData });
+  return resp.data;
+};
+
+// export const destroyImage = async (id) => {
+//   const resp = await api.delete(`/texts/${id}`);
+//   return resp.data;
+// };
+
+// export const destroyMeme = async (id) => {
+//   const resp = await api.delete(`/texts/${id}`);
+//   return resp.data;
+// };
+
+export const destroyText = async (id) => {
+  const resp = await api.delete(`/texts/${id}`);
+  return resp.data;
+};
+
+export const updateMeme = async (formData) => {
+  const resp = await api.update(`/memes/${formData.meme_id}`, {
+    meme: formData,
+  });
   return resp.data;
 };

@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import "./UserHomeScreen.css";
 
 export default function UserHome(props) {
-  const { currentUser, memes, texts, images } = props;
+  const { currentUser, memes, texts, images, deleteMeme } = props;
   const [memeData, setMemeData] = useState();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (currentUser && texts[0]) {
     const { id } = currentUser;
@@ -13,12 +17,8 @@ export default function UserHome(props) {
     const userMemes = memes.filter((meme) => {
       return meme.user_id === id;
     });
-
-    // const handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   postImage(formData);
-    //   setFormData({ img_url: "" });
-    // };
+    console.log(userMemes);
+    const reverseUserMemes = userMemes.reverse();
 
     return (
       <div>
@@ -33,7 +33,7 @@ export default function UserHome(props) {
             <h1>Time to make some memes!</h1>
           ) : (
             <div className="user-meme-complete-container">
-              {memes.map((meme) => {
+              {reverseUserMemes.map((meme) => {
                 return (
                   <div key={meme.id} className="user-meme-card">
                     <div className="user-meme-container">
@@ -41,11 +41,11 @@ export default function UserHome(props) {
                       <p className="user-meme-text">{meme.text.content}</p>
                     </div>
                     <Link
-                      to={`/main/generator/${meme.image.id}/${meme.text.id}`}
+                      to={`/main/editor/${meme.image.id}/${meme.text.id}/${meme.id}`}
                     >
                       <button>edit</button>
                     </Link>
-                    <button>delete</button>
+                    <button onClick={() => deleteMeme(meme.id)}>delete</button>
                   </div>
                 );
               })}
