@@ -40,13 +40,23 @@ button {
 /* ============  MEDIA QUERIES ================= */
 
 @media only screen and (max-width: 1040px) {
-  body {
-    background-color: #ffa07a;
+  h1 {
+    font-size: 60px !important;
+    margin-right: 20px !important;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  body {
-    background-color: #7afff8;
+  .edit-and-generator-containers {
+    flex-direction: column;
+  }
+
+  .text-complete-container {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+
+  .meme-under-construction {
+    margin-right: -20px;
   }
 }

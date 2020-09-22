@@ -11,11 +11,11 @@ export default function HeaderWelcome() {
         <h4>A playground for creating and saving meme collections</h4>
       </div>
       <div className="btn-container">
-        <Link className="login-btn" to="/login">
-          <button>LOGIN</button>
+        <Link to="/login">
+          <button className="login-btn">LOGIN</button>
         </Link>
-        <Link className="registr-btn" to="/register">
-          <button>REGISTER</button>
+        <Link to="/register">
+          <button className="registr-btn">REGISTER</button>
         </Link>
       </div>
     </header>

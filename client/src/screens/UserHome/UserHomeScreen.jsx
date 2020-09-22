@@ -9,9 +9,9 @@ export default function UserHome(props) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  if (currentUser && texts[0]) {
+  }, [memes]);
+  console.log(memes.length);
+  if (currentUser && texts[0] && memes.length) {
     const { id } = currentUser;
 
     const userMemes = memes.filter((meme) => {
@@ -28,7 +28,8 @@ export default function UserHome(props) {
             <h3>{currentUser.username}'s MEME GALLERY</h3>
           </div>
           <div>
-            {!userMemes[0] ? (
+            {/* {!userMemes[0] ? ( */}
+            {!memes[0].image.img_url ? (
               <div>
                 <h1 className="get-started-msg">Time to make some memes!</h1>
                 <Link to="/main/images">
@@ -40,10 +41,11 @@ export default function UserHome(props) {
             ) : (
               <div className="user-meme-complete-container">
                 {reverseUserMemes.map((meme) => {
+                  console.log(meme);
                   return (
                     <div key={meme.id} className="user-meme-card">
                       <div className="user-meme-img-container">
-                        <img src={meme.image.img_url} alt={meme.image.name} />
+                        <img src={meme.image.img_url} alt={meme.image.ame} />
                         <p className="user-meme-text">{meme.text.content}</p>
                       </div>
                       <div className="user-meme-btn-box">

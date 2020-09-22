@@ -45,7 +45,7 @@ export const destroyText = async (id) => {
 };
 
 export const updateMeme = async (formData) => {
-  const resp = await api.update(`/memes/${formData.meme_id}`, {
+  const resp = await api.put(`/memes/${formData.meme_id}`, {
     meme: formData,
   });
   return resp.data;

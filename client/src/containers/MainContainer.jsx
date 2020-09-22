@@ -79,19 +79,27 @@ export default function MainContainer(props) {
         image_id,
         text_id,
       });
+
+      setMemes((prevState) => [...prevState, newMeme]);
     }
     history.push("/main/userhome");
   };
   // =========================  UPDATE ==================================
-  const memeUpdate = async (formData, image_id, text_id, isEdited, meme_id) => {
+  const memeUpdate = async (meme_id, image_id, text_id, formData, isEdited) => {
+    console.log("before if statement");
     if (isEdited) {
       const newText = await postText(formData);
-      const updateMeme = await updateMeme({
+      console.log("text post line 91");
+      const editMeme = await updateMeme({
         meme_id,
         image_id,
         text_id: newText.id,
       });
-      setMemes((prevState) => [...prevState, updateMeme]);
+
+      console.log("meme update line 98");
+      setMemes((prevState) =>
+        prevState.map((meme) => (meme.id === Number(meme_id) ? editMeme : meme))
+      );
       setTexts((prevState) => [...prevState, newText]);
     } else {
       const editMeme = await updateMeme({
@@ -99,14 +107,15 @@ export default function MainContainer(props) {
         image_id,
         text_id,
       });
-      setMemes((prevState) => [...prevState, editMeme]);
+      setMemes((prevState) =>
+        prevState.map((meme) => (meme.id === Number(meme_id) ? editMeme : meme))
+      );
     }
     history.push("/main/userhome");
   };
   // ========================================================================
   const textSave = async (formData) => {
     if (formData.content !== "") {
-      console.log(formData.content);
       const newText = await postText(formData);
       setTexts((prevState) => [...prevState, newText]);
     } else {

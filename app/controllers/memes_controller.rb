@@ -29,7 +29,7 @@ class MemesController < ApplicationController
   # PATCH/PUT /memes/1
   def update
     if @meme.update(meme_params)
-      render json: @meme
+      render json: @meme, include: [:image, :text]
     else
       render json: @meme.errors, status: :unprocessable_entity
     end

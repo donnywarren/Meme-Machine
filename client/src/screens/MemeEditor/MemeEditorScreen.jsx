@@ -57,7 +57,7 @@ export default function MemeEditor(props) {
               <button
                 className="update-meme-btn"
                 onClick={() =>
-                  memeUpdate(formData, image_id, text_id, isEdited, meme_id)
+                  memeUpdate(meme_id, image_id, text_id, formData, isEdited)
                 }
               >
                 UPDATE MEME
