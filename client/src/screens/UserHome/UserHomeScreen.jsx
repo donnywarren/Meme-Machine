@@ -28,8 +28,7 @@ export default function UserHome(props) {
             <h3>{currentUser.username}'s MEME GALLERY</h3>
           </div>
           <div>
-            {/* {!userMemes[0] ? ( */}
-            {!memes[0].image.img_url ? (
+            {!userMemes[0] ? (
               <div>
                 <h1 className="get-started-msg">Time to make some memes!</h1>
                 <Link to="/main/images">
