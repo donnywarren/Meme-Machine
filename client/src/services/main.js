@@ -29,15 +29,15 @@ export const postMeme = async (formData) => {
   return resp.data;
 };
 
-// export const destroyImage = async (id) => {
-//   const resp = await api.delete(`/texts/${id}`);
-//   return resp.data;
-// };
+export const destroyImage = async (id) => {
+  const resp = await api.delete(`/images/${id}`);
+  return resp.data;
+};
 
-// export const destroyMeme = async (id) => {
-//   const resp = await api.delete(`/texts/${id}`);
-//   return resp.data;
-// };
+export const destroyMeme = async (id) => {
+  const resp = await api.delete(`/memes/${id}`);
+  return resp.data;
+};
 
 export const destroyText = async (id) => {
   const resp = await api.delete(`/texts/${id}`);

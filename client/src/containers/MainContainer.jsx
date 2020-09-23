@@ -13,6 +13,7 @@ import {
   postMeme,
   destroyText,
   updateMeme,
+  destroyImage,
 } from "../services/main";
 
 export default function MainContainer(props) {
@@ -44,6 +45,7 @@ export default function MainContainer(props) {
     fetchTexts();
   }, []);
 
+  // =======
   const postImage = async (formData) => {
     const newImage = await api.post("./images", { image: formData });
     setImages((prevState) => [...prevState, newImage]);
@@ -51,14 +53,16 @@ export default function MainContainer(props) {
   };
 
   const deleteImage = async (id) => {
-    await api.delete(`/images/${id}`);
+    await destroyImage(id);
     setImages((prevState) => prevState.filter((image) => image.id !== id));
   };
+  // =======
 
   const deleteMeme = async (id) => {
     await api.delete(`/memes/${id}`);
     setMemes((prevState) => prevState.filter((meme) => meme.id !== id));
   };
+  // =======
 
   const deleteText = async (id) => {
     await destroyText(id);
@@ -114,6 +118,7 @@ export default function MainContainer(props) {
     history.push("/main/userhome");
   };
   // ========================================================================
+
   const textSave = async (formData) => {
     if (formData.content !== "") {
       const newText = await postText(formData);

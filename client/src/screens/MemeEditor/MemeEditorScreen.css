@@ -127,14 +127,6 @@ select:focus {
     flex-direction: column;
   }
 
-  h3 {
-    font-size: 48px !important;
-  }
-
-  h1 {
-    font-size: 56px !important;
-  }
-
   .text-complete-container {
     margin-left: 0px;
     margin-top: 30px;
