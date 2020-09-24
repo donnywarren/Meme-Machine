@@ -111,12 +111,12 @@ h4 {
 
   .mobile-welcome-h3 {
     line-height: 1;
-    font-size: 28px !important;
-    margin: 15px 0px 0px 0px;
+    font-size: 24px !important;
+    margin: 15px 0px 0px 0px !important;
   }
 
   .mobile-welcome-h4 {
     line-height: 1;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
