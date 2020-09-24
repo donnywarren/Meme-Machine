@@ -6,7 +6,6 @@ import MainContainer from "./containers/MainContainer";
 import LayoutWelcome from "./layouts/Layouts/LayoutWelcome";
 import Login from "./screens/Login/LoginScreen";
 import Registration from "./screens/Registration/RegistrationScreen";
-import UserHomeScreen from "./screens/UserHome/UserHomeScreen";
 import Welcome from "./screens/Welcome/WelcomeScreen";
 import {
   loginUser,

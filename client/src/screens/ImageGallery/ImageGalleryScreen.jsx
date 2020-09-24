@@ -48,7 +48,7 @@ export default function ImageGallery(props) {
               onChange={handleChange}
             />
           </label>
-          <button>ADD IMAGE</button>
+          <button className="add-image-btn">ADD IMAGE</button>
         </form>
         <div className="all-images-container">
           {images.map((item) => {

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
-// import api from "../../services/api-config";
-// import { postMeme, postText } from "../../services/main";
+import { Link, useParams } from "react-router-dom";
 
 import "./MemeGeneratorScreen.css";
 

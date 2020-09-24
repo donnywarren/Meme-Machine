@@ -4,7 +4,6 @@ import ImageGallery from "../screens/ImageGallery/ImageGalleryScreen";
 import MemeEditor from "../screens/MemeEditor/MemeEditorScreen";
 import MemeGenerator from "../screens/MemeGenerator/MemeGeneratorScreen";
 import UserHome from "../screens/UserHome/UserHomeScreen";
-import api from "../services/api-config";
 import {
   getAllImages,
   getAllTexts,

@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./UserHomeScreen.css";
 
 export default function UserHome(props) {
-  const { currentUser, memes, texts, images, deleteMeme } = props;
-  const [memeData, setMemeData] = useState();
+  const { currentUser, memes, texts, deleteMeme } = props;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [memes]);
-  console.log(memes.length);
+
   if (currentUser && texts[0] && memes.length) {
     const { id } = currentUser;
 
     const userMemes = memes.filter((meme) => {
       return meme.user_id === id;
     });
-    console.log(userMemes);
+
     const reverseUserMemes = userMemes.reverse();
+
+    const sendText = (content) => {
+      localStorage.setItem("content", content);
+    };
 
     return (
       <>
@@ -51,6 +54,7 @@ export default function UserHome(props) {
                           <button className="user-meme-create-new">NEW</button>
                         </Link>
                         <Link
+                          onClick={() => sendText(meme.text.content)}
                           to={`/main/editor/${meme.image.id}/${meme.text.id}/${meme.id}`}
                         >
                           <button className="user-meme-edit">EDIT</button>

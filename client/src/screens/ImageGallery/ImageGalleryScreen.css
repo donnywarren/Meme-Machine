@@ -51,7 +51,21 @@
 /* ============ MEDIA QUERIES ============== */
 
 @media only screen and (max-width: 600px) {
+  .gallery-complete-container {
+    margin-top: 225px;
+  }
+
   .new-url-input {
     width: 300px;
+    margin-bottom: 4px;
+  }
+
+  .instructions {
+    font-size: 18px;
+    margin: 0 10px;
+  }
+
+  .add-image-btn {
+    margin-top: 4px;
   }
 }

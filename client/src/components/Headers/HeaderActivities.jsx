@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import "./HeaderActivities.css";
 
 export default function HeaderActivities(props) {
-  const { currentUser } = props;
-
   return (
     <header className="header-activities">
       <h1 className="header-h1">MEME MACHINE</h1>

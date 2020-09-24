@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import "./MemeEditorScreen.css";
 
@@ -8,24 +8,20 @@ export default function MemeEditor(props) {
   const params = useParams();
   const image_id = parseInt(params.id);
   const meme_id = parseInt(params.memeId);
-  const txt_id = parseInt(params.txt);
-  const text = texts.find((item) => item.id === txt_id);
+  // const txt_id = parseInt(params.txt);
+  // const text = texts.find((item) => item.id === txt_id);
   const image = images.find((item) => item.id === image_id);
   const [text_id, setTextId] = useState(null);
   const [isEdited, setIsEdited] = useState(false);
+  const test = localStorage.getItem("content");
 
-  const [formData, setFormData] = useState({ content: "" });
+  const [formData, setFormData] = useState({ content: test });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [params]);
 
-  const test = () => {
-    setFormData(text.content);
-  };
-
   const { content } = formData;
-
   const handleChange = (e) => {
     const { value } = e.target;
     setFormData({ content: value });
@@ -38,9 +34,6 @@ export default function MemeEditor(props) {
     setIsEdited(false);
   };
   if (texts[0] && images[0]) {
-    // ========
-    console.log(text.content);
-    // =========
     return (
       <div className="complete-edit-screen">
         <div className="background-green"></div>
