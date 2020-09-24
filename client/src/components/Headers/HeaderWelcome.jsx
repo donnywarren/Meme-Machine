@@ -9,7 +9,7 @@ export default function HeaderWelcome() {
         <h1 className="mobile-welcome-h1">MEME MACHINE</h1>
         <h3 className="mobile-welcome-h3">Welcome to the Meme Machine</h3>
         <h4 className="mobile-welcome-h4">
-          A playground for creating and saving meme collections
+          A playground for creating and saving memes
         </h4>
       </div>
       <div className="btn-container">

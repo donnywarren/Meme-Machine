@@ -48,18 +48,6 @@ export default function MainContainer(props) {
     fetchTexts();
   }, [changes]);
 
-  // const imageSave = async (formData) => {
-  //   const newImage = await postImage("./images", { formData });
-  //   setImages((prevState) => [...prevState, newImage]);
-  //   setChanges(changes === "yes" ? "no" : "yes");
-  // };
-
-  const postImage = async (formData) => {
-    const newImage = await api.post("./images", { image: formData });
-    setImages((prevState) => [...prevState, newImage]);
-    setChanges(changes === "yes" ? "no" : "yes");
-  };
-
   const deleteImage = async (id) => {
     await destroyImage(id);
     setImages((prevState) => prevState.filter((image) => image.id !== id));
@@ -124,6 +112,12 @@ export default function MainContainer(props) {
     history.push("/main/userhome");
   };
 
+  const imageSave = async (formData) => {
+    const newImage = await postImage(formData);
+    setImages((prevState) => [...prevState, newImage]);
+    setChanges(changes === "yes" ? "no" : "yes");
+  };
+
   const textSave = async (formData) => {
     if (formData.content !== "") {
       const newText = await postText(formData);
@@ -157,9 +151,8 @@ export default function MainContainer(props) {
       <Route path="/main/images">
         <ImageGallery
           images={images}
-          postImage={postImage}
           deleteImage={deleteImage}
-          // imageSave={imageSave}
+          imageSave={imageSave}
         />
       </Route>
       <Route path="/main/userhome">

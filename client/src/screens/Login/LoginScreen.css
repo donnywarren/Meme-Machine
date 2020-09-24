@@ -38,7 +38,7 @@ h3 {
     background-size: cover;
     background-color: #3f4a3d;
     background-position: right;
-    padding-top: 60vh;
+    /* padding-top: 60vh; */
   }
 
   h3 {
@@ -61,10 +61,12 @@ h3 {
     height: 28px;
     font-size: 20px;
     border-radius: 0;
+    margin: 4px;
   }
 
   .login-submit {
     width: 216px !important;
+    margin-top: 4px;
   }
 
   .login-word {
