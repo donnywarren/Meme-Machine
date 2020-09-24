@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, createRef, useEffect } from "react";
 import "./RegistrationScreen.css";
 
 export default function Registration(props) {
@@ -18,6 +18,12 @@ export default function Registration(props) {
     }));
   };
 
+  const focusInput = createRef();
+
+  useEffect(() => {
+    focusInput.current.focus();
+  }, []);
+
   return (
     <div className="background-guy">
       <div className="register-container">
@@ -34,6 +40,7 @@ export default function Registration(props) {
           <div className="register-top-inputs">
             <label>
               <input
+                ref={focusInput}
                 className="register-input"
                 name="username"
                 placeholder="username"

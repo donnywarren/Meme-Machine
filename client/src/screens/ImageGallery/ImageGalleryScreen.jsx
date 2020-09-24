@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./ImageGalleryScreen.css";
@@ -9,7 +9,11 @@ export default function ImageGallery(props) {
   });
   const { img_url } = formData;
 
-  const { images, deleteImage, postImage } = props;
+  const { images, deleteImage, postImage } = props; // was imageSave
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [images]);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -18,7 +22,9 @@ export default function ImageGallery(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // console.log(`imagesave  ${formData.img_url}`);
     postImage(formData);
+    // imageSave(formData);
     setFormData({ img_url: "" });
   };
 
@@ -28,9 +34,14 @@ export default function ImageGallery(props) {
         <div className="background-green"></div>
         <h3>IMAGE GALLERY</h3>
         <p className="instructions">
-          Click "use" to launch the meme generator.
+          Click "use" button below image to launch the meme generator.
+          <br />
+          You may delete only images that are not currently being used.
         </p>
-        <form onSubmit={handleSubmit}>
+        {/* <p className="instructions">
+          Click "use" button below image to launch the meme generator.
+        </p> */}
+        <form onSubmit={handleSubmit} className="image-url-form">
           <label>
             <input
               className="new-url-input"
@@ -42,6 +53,17 @@ export default function ImageGallery(props) {
             />
           </label>
           <button>ADD IMAGE</button>
+
+          {/* 
+          <Link to="/main/images">
+              <button
+                className="update-meme-btn"
+                onClick={() => memeSave(formData, image_id, text_id, isEdited)}
+              >
+                SAVE NEW MEME
+              </button>
+          </Link>
+           */}
         </form>
         <div className="all-images-container">
           {images.map((item) => {

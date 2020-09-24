@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, createRef } from "react";
 import "./LoginScreen.css";
 
 export default function Login(props) {
@@ -16,6 +16,12 @@ export default function Login(props) {
     }));
   };
 
+  const focusInput = createRef();
+
+  useEffect(() => {
+    focusInput.current.focus();
+  }, []);
+
   return (
     <div className="background-guy">
       <div className="login-container">
@@ -28,6 +34,7 @@ export default function Login(props) {
         >
           <label>
             <input
+              ref={focusInput}
               className="login-input"
               name="username"
               placeholder="username"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
-import api from "../../services/api-config";
-import { postMeme, postText } from "../../services/main";
+// import api from "../../services/api-config";
+// import { postMeme, postText } from "../../services/main";
 
 import "./MemeGeneratorScreen.css";
 
@@ -16,6 +16,10 @@ export default function MemeGenerator(props) {
   const [formData, setFormData] = useState({ content: "" });
 
   const { content } = formData;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [params]);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -56,6 +60,9 @@ export default function MemeGenerator(props) {
           </div>
           <div className="text-complete-container">
             <div className="text-scroll-box">
+              <div className="text-title-box">
+                <p className="text-title">TEXT OPTIONS</p>
+              </div>
               {texts.map((item) => {
                 return (
                   <div className="text-row" key={item.id}>
@@ -82,7 +89,7 @@ export default function MemeGenerator(props) {
                 maxLength="60"
                 value={content}
                 onChange={handleChange}
-                placeholder="new text here"
+                placeholder="create new text here"
               ></textarea>
               <button className="text-save" onClick={() => textSave(formData)}>
                 SAVE NEW TEXT

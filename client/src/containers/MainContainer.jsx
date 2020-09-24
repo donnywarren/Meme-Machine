@@ -11,15 +11,18 @@ import {
   getAllMemes,
   postText,
   postMeme,
+  postImage,
   destroyText,
-  updateMeme,
   destroyImage,
+  destroyMeme,
+  updateMeme,
 } from "../services/main";
 
 export default function MainContainer(props) {
   const [images, setImages] = useState([]);
   const [texts, setTexts] = useState([]);
   const [memes, setMemes] = useState([]);
+  const [changes, setChanges] = useState("no");
   const history = useHistory();
 
   const { currentUser } = props;
@@ -43,26 +46,29 @@ export default function MainContainer(props) {
       setTexts(textsArray);
     };
     fetchTexts();
-  }, []);
+  }, [changes]);
 
-  // =======
+  // const imageSave = async (formData) => {
+  //   const newImage = await postImage("./images", { formData });
+  //   setImages((prevState) => [...prevState, newImage]);
+  //   setChanges(changes === "yes" ? "no" : "yes");
+  // };
+
   const postImage = async (formData) => {
     const newImage = await api.post("./images", { image: formData });
     setImages((prevState) => [...prevState, newImage]);
-    window.location.reload();
+    setChanges(changes === "yes" ? "no" : "yes");
   };
 
   const deleteImage = async (id) => {
     await destroyImage(id);
     setImages((prevState) => prevState.filter((image) => image.id !== id));
   };
-  // =======
 
   const deleteMeme = async (id) => {
-    await api.delete(`/memes/${id}`);
+    await destroyMeme(id);
     setMemes((prevState) => prevState.filter((meme) => meme.id !== id));
   };
-  // =======
 
   const deleteText = async (id) => {
     await destroyText(id);
@@ -88,7 +94,7 @@ export default function MainContainer(props) {
     }
     history.push("/main/userhome");
   };
-  // =========================  UPDATE ==================================
+
   const memeUpdate = async (meme_id, image_id, text_id, formData, isEdited) => {
     console.log("before if statement");
     if (isEdited) {
@@ -117,7 +123,6 @@ export default function MainContainer(props) {
     }
     history.push("/main/userhome");
   };
-  // ========================================================================
 
   const textSave = async (formData) => {
     if (formData.content !== "") {
@@ -154,6 +159,7 @@ export default function MainContainer(props) {
           images={images}
           postImage={postImage}
           deleteImage={deleteImage}
+          // imageSave={imageSave}
         />
       </Route>
       <Route path="/main/userhome">

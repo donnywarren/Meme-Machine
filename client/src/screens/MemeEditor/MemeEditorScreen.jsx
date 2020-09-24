@@ -16,6 +16,10 @@ export default function MemeEditor(props) {
 
   const [formData, setFormData] = useState({ content: "" });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [params]);
+
   const test = () => {
     setFormData(text.content);
   };
@@ -66,6 +70,9 @@ export default function MemeEditor(props) {
           </div>
           <div className="text-complete-container">
             <div className="text-scroll-box">
+              <div className="text-title-box">
+                <p className="text-title">TEXT OPTIONS</p>
+              </div>
               {texts.map((item) => {
                 return (
                   <div className="text-row" key={item.id}>
@@ -92,7 +99,7 @@ export default function MemeEditor(props) {
                 maxLength="60"
                 value={content}
                 onChange={handleChange}
-                placeholder="new text here"
+                placeholder="create new text here"
               ></textarea>
               <button className="text-save" onClick={() => textSave(formData)}>
                 SAVE NEW TEXT

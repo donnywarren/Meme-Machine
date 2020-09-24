@@ -30,7 +30,7 @@ export default function UserHome(props) {
           <div>
             {!userMemes[0] ? (
               <div>
-                <h1 className="get-started-msg">Time to make some memes!</h1>
+                <h3 className="get-started-msg">Time to make some memes!</h3>
                 <Link to="/main/images">
                   <button className="get-started-btn">
                     CLICK HERE TO GET STARTED
@@ -40,7 +40,6 @@ export default function UserHome(props) {
             ) : (
               <div className="user-meme-complete-container">
                 {reverseUserMemes.map((meme) => {
-                  console.log(meme);
                   return (
                     <div key={meme.id} className="user-meme-card">
                       <div className="user-meme-img-container">
@@ -75,7 +74,7 @@ export default function UserHome(props) {
   } else {
     return (
       <div className="background-green">
-        <h1>Loading your sweet dank memes...</h1>
+        <h3>Loading your sweet dank memes...</h3>
       </div>
     );
   }
