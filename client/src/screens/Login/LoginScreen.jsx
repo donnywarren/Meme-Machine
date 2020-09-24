@@ -26,6 +26,7 @@ export default function Login(props) {
     <div className="background-guy">
       <div className="login-container">
         <form
+          className="login-form"
           autoComplete="off"
           onSubmit={(e) => {
             e.preventDefault();

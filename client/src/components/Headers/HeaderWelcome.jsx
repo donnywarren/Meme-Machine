@@ -7,8 +7,10 @@ export default function HeaderWelcome() {
     <header className="header-welcome">
       <div className="hero-container">
         <h1>MEME MACHINE</h1>
-        <h3>Welcome to the Meme Machine</h3>
-        <h4>A playground for creating and saving meme collections</h4>
+        <h3 className="mobile-welcome-h3">Welcome to the Meme Machine</h3>
+        <h4 className="mobile-welcome-h4">
+          A playground for creating and saving meme collections
+        </h4>
       </div>
       <div className="btn-container">
         <Link to="/login">
