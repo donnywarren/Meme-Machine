@@ -85,7 +85,7 @@ h4 {
     padding: 0px 10px;
     width: 100vw;
     margin: 0;
-    height: 400px;
+    height: 395px;
   }
   .btn-container {
     margin-top: 20px;
@@ -104,15 +104,15 @@ h4 {
   }
 
   .mobile-welcome-h1 {
-    /* font-size: 50px !important; */
+    font-size: 68px !important;
     margin: 0 0 30px 0 !important;
     line-height: 1;
   }
 
   .mobile-welcome-h3 {
     line-height: 1;
-    font-size: 32px !important;
-    margin: 15px 20px 0px;
+    font-size: 28px !important;
+    margin: 15px 0px 0px 0px;
   }
 
   .mobile-welcome-h4 {

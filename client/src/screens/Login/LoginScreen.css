@@ -34,7 +34,7 @@ h3 {
   .background-guy {
     box-sizing: border-box;
     height: 100vh;
-    background-image: url("../../assets/BackgroundGuy.jpg");
+    background-image: url("../../assets/BackgroundGuy-Small.jpg");
     background-size: cover;
     background-color: #3f4a3d;
     background-position: right;
