@@ -36,6 +36,7 @@ export default function MemeEditor(props) {
       <div className="complete-edit-screen">
         <div className="background-green"></div>
         <h3 className="editor-h3">MEME EDITOR</h3>
+        <h4 className="editor-h4">SCROLL DOWN TO EDIT TEXT</h4>
 
         <div className="edit-and-generator-containers">
           <div className="meme-under-construction">

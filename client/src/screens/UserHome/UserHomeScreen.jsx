@@ -27,8 +27,10 @@ export default function UserHome(props) {
       <>
         <div className="background-green"></div>
         <div className="userhome-container-complete">
-          <div>
-            <h3>{currentUser.username}'s MEME GALLERY</h3>
+          <div className="userhome-title-box">
+            <h3 className="userhome-title">
+              {currentUser.username}'s MEME GALLERY
+            </h3>
           </div>
           <div>
             {!userMemes[0] ? (

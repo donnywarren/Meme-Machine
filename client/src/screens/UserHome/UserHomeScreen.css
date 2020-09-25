@@ -15,6 +15,15 @@
 
 .userhome-container-complete {
   margin-top: 170px;
+  padding-top: 10px;
+}
+
+.userhome-title-box {
+  margin-bottom: 30px;
+}
+
+.userhome-title {
+  line-height: 1;
 }
 
 .get-started-msg {
