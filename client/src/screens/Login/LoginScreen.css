@@ -33,7 +33,7 @@ h3 {
 @media only screen and (max-width: 600px) {
   .background-guy {
     box-sizing: border-box;
-    height: 100vh;
+    height: 90vh;
     background-image: url("../../assets/BackgroundGuy-Small.jpg");
     background-size: cover;
     background-color: #3f4a3d;
@@ -64,7 +64,7 @@ h3 {
   }
 
   .login-submit {
-    width: 216px !important;
+    width: 226px !important;
     margin-top: 4px;
   }
 
