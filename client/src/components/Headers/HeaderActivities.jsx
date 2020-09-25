@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./HeaderActivities.css";
 
+const handleReload = () => {
+  window.loctiaon.reload(false);
+};
+
 export default function HeaderActivities(props) {
   return (
     <header className="header-activities">
@@ -23,7 +27,9 @@ export default function HeaderActivities(props) {
           </div>
           <div className="header-activities-hamburger-content">
             <Link to="/main/userhome">
-              <button className="hamburger-home-button">HOME</button>
+              <button onClick={handleReload} className="hamburger-home-button">
+                HOME
+              </button>
             </Link>
             <button
               className="hamburger-logout-button"

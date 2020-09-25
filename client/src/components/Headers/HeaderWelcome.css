@@ -37,11 +37,15 @@ h4 {
 
 @media only screen and (max-width: 1340px) {
   .header-welcome {
-    padding-right: 45vw;
+    padding-right: 35vw !important;
+  }
+
+  .mobile-welcome-h3 {
+    font-size: 32px;
   }
 }
 
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1140px) {
   .header-welcome {
     box-sizing: border-box;
     position: fixed;
@@ -51,9 +55,13 @@ h4 {
     align-items: center;
     top: 0;
     left: 0;
-    padding-right: 500px;
+    padding-right: 20vw !important;
     width: 100vw;
     height: 350px;
+  }
+
+  .mobile-welcome-h3 {
+    font-size: 32px;
   }
 
   h4 {
@@ -78,7 +86,16 @@ h4 {
   }
 }
 
-/* =========== MEDIA QUERIES ============== */
+@media only screen and (max-width: 800px) {
+  .mobile-welcome-h3 {
+    font-size: 32px !important;
+  }
+  .mobile-welcome-h1 {
+    font-size: 62px !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .header-welcome {

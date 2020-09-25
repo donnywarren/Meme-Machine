@@ -99,4 +99,8 @@ img {
     margin-top: 175px;
     margin-bottom: 25px;
   }
+
+  .get-started-btn {
+    width: 200px;
+  }
 }
