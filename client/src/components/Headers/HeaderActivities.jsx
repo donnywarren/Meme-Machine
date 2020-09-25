@@ -14,6 +14,26 @@ export default function HeaderActivities(props) {
           <button className="home-button">HOME</button>
         </Link>
       </div>
+      <div className="header-activities-hamburger-position">
+        <div className="header-activities-hamburger-container">
+          <div className="header-activities-hamburger">
+            <div className="header-activities-hamburger-bar"></div>
+            <div className="header-activities-hamburger-bar"></div>
+            <div className="header-activities-hamburger-bar"></div>
+          </div>
+          <div className="header-activities-hamburger-content">
+            <Link to="/main/userhome">
+              <button className="hamburger-home-button">HOME</button>
+            </Link>
+            <button
+              className="hamburger-logout-button"
+              onClick={props.handleLogout}
+            >
+              LOGOUT
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

@@ -36,20 +36,40 @@
   width: 30vw;
 }
 
+.header-activities-hamburger-container {
+  display: none;
+}
+
 /* ============ MEDIA QUERIES ============== */
+
+@media only screen and (max-width: 1140px) {
+  .header-activities-btn-box {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 150px;
+    margin-right: 5vw;
+  }
+
+  .logout-button {
+    margin: 0 0 0 8px !important;
+    margin-left: 0 !important;
+  }
+
+  .home-button {
+    margin: 8px 0 10px 0 !important;
+  }
+}
 
 @media only screen and (max-width: 1040px) {
   .header-activities {
     width: 100vw;
     height: 150px;
     padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .header-h1 {
-    margin: 20px 0 0 0;
+    margin: 20px 20px 0 20px;
   }
 
   .logout-button {
@@ -63,15 +83,97 @@
     width: 125px;
     height: 30px;
   }
-
-  .header-activities-btn-box {
-    justify-content: center;
-  }
 }
 
 @media only screen and (max-width: 600px) {
+  .header-activities-btn-box {
+    display: none !important;
+  }
+
+  .header-activities-hamburger-position {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+  }
+  .header-activities-hamburger-container {
+    position: relative;
+    display: block;
+    height: 100px;
+    width: 40px;
+    z-index: 100;
+  }
+
+  .header-activities-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    width: 40px;
+    padding-top: 3px;
+    margin: 0 auto;
+    opacity: 1;
+    transition: height 0.5s, opacity 0.5s;
+  }
+
+  .header-activities-hamburger-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    margin-top: 30px;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.5s;
+  }
+
+  .header-activities-hamburger-container:hover .header-activities-hamburger {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+  }
+
+  .header-activities-hamburger-container:hover
+    .header-activities-hamburger-content {
+    cursor: pointer;
+    height: 100px;
+    opacity: 1;
+  }
+
+  .header-activities-hamburger-bar {
+    height: 5px;
+    width: 40px;
+    background-color: #000000;
+  }
+
+  .hamburger-logout-button {
+    background-color: transparent;
+    font-weight: 700;
+    border: none;
+    box-shadow: none;
+  }
+
+  .hamburger-home-button {
+    background-color: transparent;
+    font-weight: 700;
+    border: none;
+    box-shadow: none;
+  }
+
+  .header-activities-hamburger-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .header-activities {
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-activities {
+    height: 150px;
     padding-bottom: 10px;
     background-position: top;
   }
