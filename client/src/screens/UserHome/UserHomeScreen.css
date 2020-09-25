@@ -8,6 +8,7 @@
   background-image: url("../../assets/BackgroundGreen.jpg");
   background-size: cover;
   background-color: #3f4a3d;
+  background-position: center top;
   padding-top: 60vh;
   z-index: -100;
 }
