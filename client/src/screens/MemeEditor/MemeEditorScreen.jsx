@@ -8,8 +8,6 @@ export default function MemeEditor(props) {
   const params = useParams();
   const image_id = parseInt(params.id);
   const meme_id = parseInt(params.memeId);
-  // const txt_id = parseInt(params.txt);
-  // const text = texts.find((item) => item.id === txt_id);
   const image = images.find((item) => item.id === image_id);
   const [text_id, setTextId] = useState(null);
   const [isEdited, setIsEdited] = useState(false);

@@ -34,7 +34,7 @@ h3 {
 
 @media only screen and (max-width: 600px) {
   .register-btn {
-    width: 216px;
+    width: 216px !important;
   }
 
   .register-word {
