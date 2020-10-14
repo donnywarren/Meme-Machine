@@ -5,6 +5,7 @@ import "./HeaderActivities.css";
 export default function HeaderActivities(props) {
   return (
     <header className="header-activities">
+      {window.screen.width < 600 ? console.log("small") : console.log("big")}
       <h1 className="header-h1">MEME MACHINE</h1>
       <div className="header-activities-btn-box">
         <button className="logout-button" onClick={props.handleLogout}>
@@ -14,7 +15,7 @@ export default function HeaderActivities(props) {
           <button className="home-button">HOME</button>
         </Link>
       </div>
-      <div className="header-activities-hamburger-position">
+      <div className="header-activities-hamburger-position" tabindex="0">
         <div className="header-activities-hamburger-container">
           <div className="header-activities-hamburger">
             <div className="header-activities-hamburger-bar"></div>
