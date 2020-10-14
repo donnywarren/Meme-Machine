@@ -10,6 +10,7 @@
   padding-right: 32vw;
   width: 100vw;
   height: 350px;
+  z-index: 1;
 }
 
 h4 {
