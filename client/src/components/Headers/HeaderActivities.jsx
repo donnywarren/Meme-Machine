@@ -15,7 +15,7 @@ export default function HeaderActivities(props) {
           <button className="home-button">HOME</button>
         </Link>
       </div>
-      <div className="header-activities-hamburger-position" tabindex="0">
+      <div className="header-activities-hamburger-position">
         <div className="header-activities-hamburger-container">
           <div className="header-activities-hamburger">
             <div className="header-activities-hamburger-bar"></div>
