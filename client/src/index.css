@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
 }
 
-.header-h1,
+/* .header-h1,
 .mobile-welcome-h1 {
   font-weight: 900;
   font-size: 84px;
@@ -18,7 +18,7 @@ body {
   margin: 0;
   text-shadow: -1px -1px 8px rgba(255, 255, 255, 0.4),
     1px 1px 8px rgba(255, 255, 255, 0.4);
-}
+} */
 
 h3 {
   font-size: 50px;
@@ -43,13 +43,13 @@ button {
 
 /* ============  MEDIA QUERIES ================= */
 
-@media only screen and (max-width: 1040px) {
+/* @media only screen and (max-width: 1040px) {
   .header-h1,
   .mobile-welcome-h1 {
     font-size: 72px;
     margin-right: 20px !important;
   }
-}
+} */
 
 @media only screen and (max-width: 800px) {
   .edit-and-generator-containers {
@@ -60,9 +60,13 @@ button {
     font-size: 48px !important;
   }
 
+  /* h3 {
+    font-size: 48px !important;
+  }
+
   .header-h1,
   .mobile-welcome-h1 {
     font-size: 56px;
     margin-bottom: 5px !important;
-  }
+  } */
 }

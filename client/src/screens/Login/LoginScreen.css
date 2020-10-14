@@ -40,12 +40,11 @@ h3 {
 
 @media only screen and (max-width: 600px) {
   .background-guy {
-    /* box-sizing: border-box; */
-    /* height: 100vh; */
     background-image: url("../../assets/BackgroundGuy-Small.jpg");
     background-size: cover;
     background-color: #3f4a3d;
     background-position: right;
+    padding-top: 48vh;
   }
 
   h3 {
@@ -57,7 +56,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -100px !important;
+    margin: 0;
   }
 
   .login-form {
