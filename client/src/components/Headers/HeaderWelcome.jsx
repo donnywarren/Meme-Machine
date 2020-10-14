@@ -17,7 +17,7 @@ export default function HeaderWelcome() {
           <button className="login-btn">LOGIN</button>
         </Link>
         <Link to="/register">
-          <button className="registr-btn">REGISTER</button>
+          <button className="register-btn">REGISTER</button>
         </Link>
       </div>
     </header>
