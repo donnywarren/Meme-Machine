@@ -1,11 +1,20 @@
+.background-relative {
+  position: relative;
+}
+
 .background-guy {
+  position: fixed;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
   height: 100vh;
+  width: 100vw;
   background-image: url("../../assets/BackgroundGuy.jpg");
   background-size: cover;
   background-color: #3f4a3d;
   background-position: right;
   padding-top: 60vh;
+  z-index: -1;
 }
 
 h3 {
@@ -32,8 +41,8 @@ h3 {
 
 @media only screen and (max-width: 600px) {
   .background-guy {
-    box-sizing: border-box;
-    height: 100vh;
+    /* box-sizing: border-box; */
+    /* height: 100vh; */
     background-image: url("../../assets/BackgroundGuy-Small.jpg");
     background-size: cover;
     background-color: #3f4a3d;
