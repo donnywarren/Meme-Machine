@@ -64,7 +64,8 @@ h3 {
   }
 
   .login-input {
-    height: 28px;
+    box-sizing: border-box;
+    height: 35px;
     font-size: 20px;
     border-radius: 0;
     margin: 4px;
