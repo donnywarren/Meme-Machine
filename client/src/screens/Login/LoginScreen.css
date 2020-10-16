@@ -65,19 +65,23 @@ h3 {
 
   .login-input {
     box-sizing: border-box;
-    width: 258px;
+    width: 250px;
     height: 35px;
     font-size: 20px;
     padding-left: 10px;
     border-radius: 0;
-    margin: 4px;
+    margin: 4px 0;
   }
 
   .login-submit {
     box-sizing: border-box;
-    width: 258px !important;
+    width: 250px !important;
     padding: 0;
-    margin-top: 4px;
+    margin: 4px 0;
+  }
+
+  .login-input:active {
+    background-color: rgba(46, 46, 45, 0.2);
   }
 
   .login-word {
