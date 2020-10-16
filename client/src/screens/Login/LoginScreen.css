@@ -64,15 +64,14 @@ h3 {
   }
 
   .login-input {
-    box-sizing: border-box;
-    height: 35px;
+    height: 28px;
     font-size: 20px;
     border-radius: 0;
     margin: 4px;
   }
 
   .login-submit {
-    width: 216px !important;
+    width: 226px !important;
     padding: 0;
     margin-top: 4px;
   }
