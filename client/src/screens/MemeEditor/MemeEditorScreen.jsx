@@ -51,7 +51,7 @@ export default function MemeEditor(props) {
 
             <Link to="/main/images">
               <button
-                className="update-meme-btn"
+                className="btn update-meme-btn"
                 onClick={() =>
                   memeUpdate(meme_id, image_id, text_id, formData, isEdited)
                 }
@@ -75,7 +75,7 @@ export default function MemeEditor(props) {
                       {item.content}
                     </p>
                     <button
-                      className="text-delete"
+                      className="btn text-delete"
                       onClick={() => deleteText(item.id)}
                     >
                       &#10005;
@@ -93,11 +93,11 @@ export default function MemeEditor(props) {
                 onChange={handleChange}
                 placeholder="create new text here"
               ></textarea>
-              <button className="text-save" onClick={() => textSave(formData)}>
+              <button className="btn text-save" onClick={() => textSave(formData)}>
                 SAVE NEW TEXT
               </button>
               <Link to="/main/images">
-                <button className="new-image-btn">CHOOSE NEW IMAGE</button>
+                <button className="btn new-image-btn">CHOOSE NEW IMAGE</button>
               </Link>
             </form>
           </div>

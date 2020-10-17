@@ -86,14 +86,12 @@ export default function MainContainer(props) {
     console.log("before if statement");
     if (isEdited) {
       const newText = await postText(formData);
-      console.log("text post line 91");
       const editMeme = await updateMeme({
         meme_id,
         image_id,
         text_id: newText.id,
       });
 
-      console.log("meme update line 98");
       setMemes((prevState) =>
         prevState.map((meme) => (meme.id === Number(meme_id) ? editMeme : meme))
       );

@@ -8,11 +8,11 @@ export default function HeaderActivities(props) {
       {window.screen.width < 600 ? console.log("small") : console.log("big")}
       <h1 className="header-h1">MEME MACHINE</h1>
       <div className="header-activities-btn-box">
-        <button className="logout-button" onClick={props.handleLogout}>
+        <button className="btn logout-button" onClick={props.handleLogout}>
           LOGOUT
         </button>
         <Link to="/main/userhome">
-          <button className="home-button">HOME</button>
+          <button className="btn home-button">HOME</button>
         </Link>
       </div>
       <div className="header-activities-hamburger-position">
@@ -24,10 +24,10 @@ export default function HeaderActivities(props) {
           </div>
           <div className="header-activities-hamburger-content">
             <Link to="/main/userhome">
-              <button className="hamburger-home-button">HOME</button>
+              <button className="btn hamburger-home-button">HOME</button>
             </Link>
             <button
-              className="hamburger-logout-button"
+              className="btn hamburger-logout-button"
               onClick={props.handleLogout}
             >
               LOGOUT

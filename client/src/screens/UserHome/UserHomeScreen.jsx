@@ -37,7 +37,7 @@ export default function UserHome(props) {
               <div>
                 <h3 className="get-started-msg">Time to make some memes!</h3>
                 <Link to="/main/images">
-                  <button className="get-started-btn">
+                  <button className="btn get-started-btn">
                     CLICK HERE TO GET STARTED
                   </button>
                 </Link>
@@ -53,16 +53,16 @@ export default function UserHome(props) {
                       </div>
                       <div className="user-meme-btn-box">
                         <Link to="/main/images">
-                          <button className="user-meme-create-new">NEW</button>
+                          <button className="btn user-meme-create-new">NEW</button>
                         </Link>
                         <Link
                           onClick={() => sendText(meme.text.content)}
                           to={`/main/editor/${meme.image.id}/${meme.text.id}/${meme.id}`}
                         >
-                          <button className="user-meme-edit">EDIT</button>
+                          <button className="btn user-meme-edit">EDIT</button>
                         </Link>
                         <button
-                          className="user-meme-delete"
+                          className="btn user-meme-delete"
                           onClick={() => deleteMeme(meme.id)}
                         >
                           DELETE

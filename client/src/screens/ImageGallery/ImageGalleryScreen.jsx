@@ -48,7 +48,7 @@ export default function ImageGallery(props) {
               onChange={handleChange}
             />
           </label>
-          <button className="add-image-btn">ADD IMAGE</button>
+          <button className="btn add-image-btn">ADD IMAGE</button>
         </form>
         <div className="all-images-container">
           {images.map((item) => {
@@ -60,10 +60,10 @@ export default function ImageGallery(props) {
 
                 <div className="images-btn-box">
                   <Link to={`/main/generator/${item.id}`}>
-                    <button className="image-use-btn">USE</button>
+                    <button className="btn image-use-btn">USE</button>
                   </Link>
                   <button
-                    className="image-delete-btn"
+                    className="btn image-delete-btn"
                     onClick={() => deleteImage(item.id)}
                   >
                     DELETE

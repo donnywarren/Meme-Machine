@@ -54,7 +54,7 @@ export default function Login(props) {
               onChange={handleChange}
             ></input>
           </label>
-          <button className="login-btn login-submit">Submit</button>
+          <button className="btn login-btn login-submit">Submit</button>
 
           <h3 className="login-word">LOGIN</h3>
         </form>

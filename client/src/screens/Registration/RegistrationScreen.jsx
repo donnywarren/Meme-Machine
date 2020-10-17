@@ -84,7 +84,7 @@ export default function Registration(props) {
             </label>
           </div>
 
-          <button className="register-submit-btn">Submit</button>
+          <button className="btn register-submit-btn">Submit</button>
           <h3 className="register-word">REGISTER</h3>
         </form>
       </div>
