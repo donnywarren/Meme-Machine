@@ -22,9 +22,13 @@ export default function ImageGallery(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    imageSave(formData);
-    setFormData({ img_url: "" });
+    if (img_url === "") {
+      alert("Please enter an image URL")
+    } else {
+      imageSave(formData);
+      setFormData({ img_url: "" });
+    }
+    
   };
 
   if (images[0]) {

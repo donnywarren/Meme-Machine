@@ -30,9 +30,13 @@ function App() {
   }, []);
 
   const loginSubmit = async (loginData) => {
-    const userData = await loginUser(loginData);
-    setCurrentUser(userData);
-    !userData ? history.push("/") : history.push("/main/userhome");
+    try {
+      const userData = await loginUser(loginData);
+      setCurrentUser(userData);
+      !userData ? history.push("/") : history.push("/main/userhome");
+    } catch (e) {
+      alert("Authentication failed");
+    }
   };
 
   const registerSubmit = async (registerData) => {

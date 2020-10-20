@@ -70,6 +70,7 @@
 .text-scroll-box {
   border: 1px solid #000000;
   background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 4px 4px 10px grey inset, -4px -4px 10px grey inset;
   height: 300px;
   width: 300px;
   overflow: auto;
@@ -83,7 +84,9 @@ textarea {
   width: 300px;
   padding: 10px;
   border: none;
+  border-radius: 0;
   background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 4px 4px 11px grey inset, -4px -4px 10px grey inset;
 }
 
 .text-form {

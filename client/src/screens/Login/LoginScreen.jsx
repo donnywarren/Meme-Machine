@@ -30,7 +30,14 @@ export default function Login(props) {
           autoComplete="off"
           onSubmit={(e) => {
             e.preventDefault();
-            props.loginSubmit(formData);
+            if (username === "") {
+              alert("Please enter your username")
+            } else if (password === "") {
+              alert("Please enter your password")
+            } else {
+              props.loginSubmit(formData);
+            }
+            
           }}
         >
           <label>

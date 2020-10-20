@@ -29,7 +29,7 @@ export default function UserHome(props) {
         <div className="userhome-container-complete">
           <div className="userhome-title-box">
             <h3 className="userhome-title">
-              {currentUser.username}'s MEME GALLERY
+              {currentUser.username.toUpperCase()}'s MEME GALLERY
             </h3>
           </div>
           <div>
