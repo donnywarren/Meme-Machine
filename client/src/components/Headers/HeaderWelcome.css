@@ -7,7 +7,8 @@
   align-items: center;
   top: 0;
   left: 0;
-  padding-right: 32vw;
+  padding-right: 29vw;
+
   width: 100vw;
   height: 350px;
   z-index: 1;
@@ -45,7 +46,7 @@ h4 {
 
 /* ======= MEDIA QUERIES ==================== */
 
-@media only screen and (max-width: 1340px) {
+/* @media only screen and (max-width: 1340px) {
   .header-welcome {
     padding-right: 35vw;
   }
@@ -53,7 +54,7 @@ h4 {
   .welcome-h3 {
     font-size: 32px;
   }
-}
+} */
 
 @media only screen and (max-width: 1140px) {
   .header-welcome {

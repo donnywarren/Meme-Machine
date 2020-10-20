@@ -5,18 +5,19 @@ h3 {
 }
 
 .register-container {
-  margin-right: 34vw;
+  margin-right: 31vw;
 }
 
 .register-input {
   height: 32px;
   font-size: 20px;
   border-radius: 0;
-}
-
-.register-input {
   margin: 4px 4px 4px;
 }
+
+/* .register-input {
+  margin: 4px 4px 4px;
+} */
 
 .register-submit-btn {
   width: 442px;
@@ -26,16 +27,27 @@ h3 {
 
 /* ============= MEDIA QUERIES ================ */
 
-@media only screen and (max-width: 633px) {
+/* @media only screen and (max-width: 633px) {
   .register-submit-btn {
     width: 150px !important;
   }
-}
+} */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 633px) {
+  .register-input {
+    box-sizing: border-box;
+    height: 35px;
+    padding-left: 10px;
+    width: 250px;
+    /* height: 32px;
+  font-size: 20px;
+  border-radius: 0;
+  margin: 4px 4px 4px; */
+  }
+
   .register-submit-btn {
     box-sizing: border-box;
-    width: 216px !important;
+    width: 250px;
     padding: 0;
   }
 
