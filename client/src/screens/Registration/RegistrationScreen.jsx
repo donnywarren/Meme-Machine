@@ -28,9 +28,16 @@ export default function Registration(props) {
     <div className="background-guy">
       <div className="register-container">
         <form
+          autoComplete="off"
           onSubmit={(e) => {
             e.preventDefault();
-            if (password === confirmpassword) {
+            if (username === "") {
+              alert("Please enter a username")
+            } else if (email === "") {
+              alert("Please enter an email")
+            } else if (password === "" || confirmpassword === "") { 
+              alert("Please enter a password and confirmation")
+            }else if (password === confirmpassword) {
               props.registerSubmit(formData);
             } else {
               alert("Your password and confirmation do not match");

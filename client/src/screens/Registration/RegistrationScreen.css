@@ -15,23 +15,11 @@ h3 {
   margin: 4px 4px 4px;
 }
 
-/* .register-input {
-  margin: 4px 4px 4px;
-} */
-
 .register-submit-btn {
   width: 442px;
   margin: 4px 4px 20px;
   height: 40px;
 }
-
-/* ============= MEDIA QUERIES ================ */
-
-/* @media only screen and (max-width: 633px) {
-  .register-submit-btn {
-    width: 150px !important;
-  }
-} */
 
 @media only screen and (max-width: 633px) {
   .register-input {
@@ -39,15 +27,12 @@ h3 {
     height: 35px;
     padding-left: 10px;
     width: 250px;
-    /* height: 32px;
-  font-size: 20px;
-  border-radius: 0;
-  margin: 4px 4px 4px; */
   }
 
   .register-submit-btn {
     box-sizing: border-box;
     width: 250px;
+    height: 35px;
     padding: 0;
   }
 
