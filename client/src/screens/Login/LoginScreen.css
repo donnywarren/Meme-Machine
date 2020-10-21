@@ -39,12 +39,19 @@ h3 {
 
 /* ============= MEDIA QUERIES ================ */
 
+@media only screen and (max-width: 1030px) {
+  .login-container {
+    margin-right: 0;
+  }
+  .background-guy {
+    background-size: cover;
+    background-position: right;
+    padding-top: 45vh;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .background-guy {
-    background-image: url("../../assets/BackgroundGuy-Small.jpg");
-    background-size: cover;
-    background-color: #3f4a3d;
-    background-position: right;
     padding-top: 48vh;
   }
 

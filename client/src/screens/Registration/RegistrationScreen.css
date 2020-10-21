@@ -21,6 +21,12 @@ h3 {
   height: 40px;
 }
 
+@media only screen and (max-width: 1030px) {
+  .register-container {
+    margin-right: 0;
+  }
+}
+
 @media only screen and (max-width: 633px) {
   .register-input {
     box-sizing: border-box;

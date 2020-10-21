@@ -46,16 +46,6 @@ h4 {
 
 /* ======= MEDIA QUERIES ==================== */
 
-/* @media only screen and (max-width: 1340px) {
-  .header-welcome {
-    padding-right: 35vw;
-  }
-
-  .welcome-h3 {
-    font-size: 32px;
-  }
-} */
-
 @media only screen and (max-width: 1140px) {
   .header-welcome {
     padding-right: 20vw;
@@ -76,9 +66,20 @@ h4 {
 }
 
 @media only screen and (max-width: 1040px) {
+  .header-welcome {
+    padding-right: 0;
+  }
+
   .welcome-h1 {
     font-size: 72px;
     margin-right: 20px !important;
+  }
+
+  .hero-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 }
 
@@ -94,12 +95,6 @@ h4 {
 }
 
 @media only screen and (max-width: 600px) {
-  .hero-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
   .header-welcome {
     padding: 0px 10px;
     margin: 0;
