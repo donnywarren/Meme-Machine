@@ -56,7 +56,7 @@ export default function MemeEditor(props) {
                   memeUpdate(meme_id, image_id, text_id, formData, isEdited)
                 }
               >
-                UPDATE MEME
+                SAVE UPDATE
               </button>
             </Link>
           </div>

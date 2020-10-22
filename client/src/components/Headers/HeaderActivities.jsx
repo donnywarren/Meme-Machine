@@ -5,7 +5,7 @@ import "./HeaderActivities.css";
 export default function HeaderActivities(props) {
   return (
     <header className="header-activities">
-      {window.screen.width < 600 ? console.log("small") : console.log("big")}
+      {/* {window.screen.width < 600 ? console.log("small") : console.log("big")} */}
       <h1 className="header-h1">MEME MACHINE</h1>
       <div className="header-activities-btn-box">
         <button className="btn logout-button" onClick={props.handleLogout}>
