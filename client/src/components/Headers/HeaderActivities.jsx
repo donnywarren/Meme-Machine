@@ -18,9 +18,9 @@ export default function HeaderActivities(props) {
       <div className="header-activities-hamburger-position">
         <div className="header-activities-hamburger-container">
           <div className="header-activities-hamburger">
-            <div className="header-activities-hamburger-bar"></div>
-            <div className="header-activities-hamburger-bar"></div>
-            <div className="header-activities-hamburger-bar"></div>
+            <div className="header-activities-hamburger-bar top-clicked"></div>
+            <div className="header-activities-hamburger-bar middle-clicked"></div>
+            <div className="header-activities-hamburger-bar bottom-clicked"></div>
           </div>
           <div className="header-activities-hamburger-content">
             <Link to="/main/userhome">
