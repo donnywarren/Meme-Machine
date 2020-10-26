@@ -37,7 +37,7 @@ export default function UserHome(props) {
               <div>
                 <h3 className="get-started-msg">Time to make some memes!</h3>
                 <Link to="/main/images">
-                  <button className="btn get-started-btn">
+                  <button id="get-started-btn" className="btn get-started-btn">
                     CLICK HERE TO GET STARTED
                   </button>
                 </Link>

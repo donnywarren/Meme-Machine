@@ -30,8 +30,8 @@
   margin-top: 50px;
 }
 
-.get-started-btn {
-  width: 500px;
+#get-started-btn {
+  width: 70vw;
   margin-top: 50px;
   height: 40px;
 }
