@@ -45,6 +45,9 @@ export default function HeaderActivities(props) {
             <Link to="/main/userhome">
               <button className="btn hamburger-home-button">HOME</button>
             </Link>
+            <Link to="/main/images">
+              <button className="btn hamburger-create-button">CREATE</button>
+            </Link>
             <button
               className="btn hamburger-logout-button"
               onClick={props.handleLogout}

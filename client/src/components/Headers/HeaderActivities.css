@@ -166,7 +166,7 @@
     top: -35px;
     left: 50%;
     transform: translateX(100%);
-    height: 150px;
+    height: 195px;
     width: 130px;
     background-color: #455045;
     margin-top: 30px;
@@ -182,16 +182,8 @@
     transform: translateX(-78%);
   }
 
-  .hamburger-logout-button {
-    background-color: transparent;
-    font-weight: 700;
-    font-size: 24px;
-    border: none;
-    box-shadow: none;
-    text-shadow: -1px -1px 10px #000000, 1px 1px 10px #000000;
-    margin-top: 10px;
-  }
-
+  .hamburger-logout-button,
+  .hamburger-create-button,
   .hamburger-home-button {
     background-color: transparent;
     font-weight: 700;
@@ -199,7 +191,9 @@
     border: none;
     box-shadow: none;
     text-shadow: -1px -1px 10px #000000, 1px 1px 10px #000000;
+    margin: 5px 0;
   }
+
   .header-activities {
     flex-direction: column;
     align-items: center;
