@@ -107,8 +107,7 @@
     flex-direction: column;
     align-items: flex-end;
     top: 20px;
-    right: 0px;
-    padding-right: 5px;
+    right: 10px;
   }
 
   .header-activities-hamburger-container {
@@ -126,6 +125,10 @@
     margin: 0 auto;
     opacity: 1;
     transition: all 0.75s;
+  }
+
+  .header-activities-hamburger-container:hover .header-activities-hamburger {
+    cursor: pointer;
   }
 
   .hamburger-bar {
@@ -175,12 +178,8 @@
     z-index: -1;
   }
 
-  .header-activities-hamburger-container:hover .header-activities-hamburger {
-    cursor: pointer;
-  }
-
   .hamburger-content-clicked {
-    transform: translateX(-80%);
+    transform: translateX(-78%);
   }
 
   .hamburger-logout-button {
