@@ -30,6 +30,9 @@ export default function HeaderActivities(props) {
         <button className="btn logout-button" onClick={props.handleLogout}>
           LOGOUT
         </button>
+        <Link to="/main/images">
+          <button className="btn create-button">CREATE</button>
+        </Link>
         <Link to="/main/userhome">
           <button className="btn home-button">HOME</button>
         </Link>
