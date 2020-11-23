@@ -60,7 +60,7 @@ The **MEME MACHINE** MVP will allow users to create and delete a personal reposi
 
 #### Wireframes
 
-![](https://wireframe.cc/0jM6G6)
+![](https://media.giphy.com/media/1xooC2wGklzS3jTdgT/source.gif)
 [Desktop/Tablet Landing Screen](https://wireframe.cc/0jM6G6)
 
 [Desktop/Tablet Landing with Login](https://wireframe.cc/07UKMm)
