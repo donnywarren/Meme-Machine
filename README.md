@@ -26,13 +26,13 @@ _**MEME MACHINE is an app for creating, storing and editing meme collections.**_
 
 ## MVP
 
-The **MEME MACHINE** MVP will allow users to create and delete a personal repository in which they will be able to curate a collection of memes. The users will be able to combine text with images to display a finished meme. Additionally the user will be able to add image urls and text to the data base. The UX will be intuitive and the meme display will be the focus.
+The **MEME MACHINE** MVP will allow users to create and delete a personal repository in which they will be able to curate a collection of memes. The users will be able to combine text with images to display a finished meme. Additionally the user will be able to add image URLs and text to the data base. The UX will be intuitive and the meme display will be the focus.
 
 <br>
 
 ### Goals
 
-- _User authentication will include registeration, login and delete_
+- _User authentication will include registeration and login_
 - _Track user throught app, allowing access to only their FINISHED memes_
 - _Allow image url and text resource to be available to all users_
 - _Store image urls and text data in separate but linked tables_
@@ -60,6 +60,7 @@ The **MEME MACHINE** MVP will allow users to create and delete a personal reposi
 
 #### Wireframes
 
+![](https://wireframe.cc/0jM6G6)
 [Desktop/Tablet Landing Screen](https://wireframe.cc/0jM6G6)
 
 [Desktop/Tablet Landing with Login](https://wireframe.cc/07UKMm)
