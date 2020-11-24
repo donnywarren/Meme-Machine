@@ -184,8 +184,10 @@ Created on Diagrams.net -- [Meme Machine](https://drive.google.com/file/d/13ozsP
 ## Post-MVP
 
 - _Allow users to upload imgane files instead of urls._
+- _Allow users to create text at top of images as well as the current bottom location._
 - _Allow users to download finished memes as pdf or jpeg files._
 - _Create a meme playground for users to work collaboratively to create memes._
+- _Create delete user functionality._
 
 ---
 
